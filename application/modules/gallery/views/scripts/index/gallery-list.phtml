@@ -1,0 +1,56 @@
+<section id="portfolio" class="section" >
+  <div class="container">
+    <div class="row " >
+      <div class="col-md-offset-3 col-md-6">
+        <header class="section-header section-header-type2">
+          <div class="heading-wrap">
+            <h2 class="heading heading-type2" ><span>Galeria</span></h2>
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center animated" data-animation="bounceInRight">
+    <div class="portfolio-filter-wrap">
+      <ul class="portfolio-filter clearfix">
+          
+        <li><a href="javascript:void(0)"  onclick="return false;" class="btn btn-primary" data-filter="*">Wszystkie</a></li>
+          <?php foreach($this->galleries as $key => $gallery): ?>
+                <li><a href="javascript:void(0)"  onclick="return false;" class="btn btn-default" data-filter=".filter-<?php echo $key+1; ?>"><?php echo $gallery['Translation'][$this->language]['name']; ?></a></li>
+	   <?php endforeach; ?>
+      </ul>
+    </div>
+    <div class="portfolio-frame">
+      <div class="portfolio-slider sly-frame">
+          <?php foreach($this->galleries as $key => $gallery): 
+		$photos = $gallery['Photos'];
+                foreach($photos as $photo):
+		?>
+                <div class="portfolio-item filter-<?php echo $key+1; ?>">
+                    <div class="item-thumbnail"> <a href="#"> <img alt="img" src="/media/photos/<?php echo $photo['offset']; ?>/266x150/<?php echo $photo['filename']; ?>" ></a>
+                    </div>
+                    <div class="item-hover">
+                        <div class="details">
+                          <div class="table">
+                            <div class="vertical-center">
+                              <a href="/media/photos/<?php echo $photo['offset']; ?>/<?php echo $photo['filename']; ?>" class="btn">Powiększ</a> </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+          <li></li>
+	    <?php endforeach;
+            endforeach; ?>
+      </div>
+    </div>
+    <div class="portfolio-navigation"> <a class="btn btn-primary slider-direction prev-page" href="javascript:void(0);"><i class="icomoon-arrow-left2"></i></a> <a class="btn btn-primary slider-direction next-page" href="javascript:void(0);"><i class="icomoon-arrow-right2"></i></a>
+      <ul class="pages unstyled">
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+	    
+	

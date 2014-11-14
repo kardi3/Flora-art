@@ -1,0 +1,130 @@
+<script>
+  $(function() {
+    $( ".dialog" ).dialog({
+      autoOpen: false,
+      height:650,
+      width:800,
+      modal:true,
+      show: {
+        effect: "clip",
+        duration: 700
+      },
+      hide: {
+        effect: "fade",
+        duration: 700
+      }
+    });
+ 
+    var post_photo_id = "<?php echo $_POST['photo_id']; ?>";
+    if(post_photo_id){
+	$('input[value='+post_photo_id+']').parents('.dialog').dialog('open');
+    }
+    $( ".opener" ).click(function() {
+	var elemName = "#dialog"+$(this).attr('rel');
+	$( elemName ).dialog( "open" );
+    });
+    
+    $('ul.errors').parent('div').dialog('open');
+    
+  });
+  </script>
+  <style>
+      .dialog label{
+	  width:150px;
+	  display:inline-block;
+	  margin:2px 5px;
+      }
+      .dialog fieldset{
+	  display:block;
+	  margin:5px;
+      }
+      .dialog img{
+	  float:right;
+      }
+      .dialog textarea{
+	  width:231px;
+	  height:160px;
+      }
+      .dialog #captcha-element,.dialog #captcha-input-label{
+	  display:inline-block;
+      }
+      
+      .dialog #captcha-element img{
+	  float:none;
+	  display:block;
+      }
+      .ui-dialog{
+	  z-index:100000;
+      }
+      .ui-dialog input[type="submit"]{
+	  margin-left: 220px;
+	margin-top: 20px;
+      }
+  </style>
+<!--page title-->
+<section class="page_title translucent_bg_color_scheme image_fixed t_align_c relative wrapper" style="background: url('/media/photos/1645854905/1680x380/cropped-banner-2.jpg');">
+    <div class="container">
+        <h1 class="color_light fw_light m_bottom_5">
+            <?php echo $this->category['Translation'][$this->language]['name']; ?>
+        </h1>
+        <ul class="hr_list d_inline_m breadcrumbs">
+            <li class="m_right_8 f_xs_none">
+                <a href="<?php echo $this->url(array(), 'domain-i18n:homepage') ?>" class="color_grey_light_3 d_inline_m m_right_10">Home</a>
+                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+            </li>
+            <?php echo $this->partial('category-path.phtml', 'product', array('category' => $this->category, 'language' => $this->language)) ?>
+         </ul>
+    </div>
+</section>
+<section class="section_offset">
+    <div class="container clearfix">
+	    <?php echo $this->messages()->render(); ?>
+	    <?php foreach($this->category->get('PhotoRoot')->getNode()->getChildren() as $key => $photo): ?>
+	    
+            <?php if($key%4==0): ?> <div class="row"> <?php endif; ?>
+		    <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_50">
+                            <figure>
+                                <div class="jackbox relative r_corners wrapper m_bottom_20 db_xs_centered">
+				    <a data-group="<?php echo $this->category['Translation'][$this->language]['slug']; ?>" class="jackbox" data-thumbnail="/media/photos/<?php echo $photo['offset']; ?>/120x90/<?php echo $photo['filename']; ?>" href="/media/photos/<?php echo $photo['offset']; ?>/<?php echo $photo['filename']; ?>">
+					
+					<?php if($photo['offset']): ?>
+					    <img src="/media/photos/<?php echo $photo['offset'] ?>/270x150/<?php echo $photo['filename'] ?>" alt="" title="" />
+					<?php else: ?>
+					    <img src="/images/layout/shop/no_photo.jpg" data-original="/images/layout/shop/no_photo.jpg" alt="<?php echo $this->translate('No photo') ?>" style="width: 60px; height: 60px" />
+					<?php endif; ?>
+                                    </a>
+                                </div>
+                                <figcaption>
+                                    <h4 class="fw_light fs_middle">
+                                            <?php echo $photo['title']; ?>
+                                        
+                                    </h4>
+                                    <div class="clearfix">
+                                        <a id="opener<?php echo $key; ?>" rel="<?php echo $key; ?>" href="javascript:void(0)" class="opener color_purple color_pink_hover f_left d_block m_right_20 fw_light">
+                                            <span class="d_inline_m m_right_5 icon_wrap_size_0 circle color_grey_light tr_all">
+                                                <i class="icon-angle-right"></i>
+                                            </span>
+                                            Zapytaj o produkt
+					   
+                                        </a>
+					 <div id="dialog<?php echo $key; ?>" class="dialog" title="Zapytaj o przedmiot">
+					     <form method="POST">
+						 <img src="/media/photos/<?php echo $photo['offset'] ?>/270x150/<?php echo $photo['filename'] ?>" alt="" title="" />
+					
+						  <?php echo $this->form->lastName; ?>
+						  <?php echo $this->form->email; ?>
+						 <input type="hidden" id="photo_id" value="<?php echo $photo['id']; ?>" name="photo_id" />
+						 <?php echo $this->form->message; ?>
+						  <?php echo $this->form->captcha; ?>
+						  <?php echo $this->form->submit->setAttrib('class','button_type_3 color_blue r_corners tt_uppercase fs_medium tr_all f_left m_right_10 m_md_bottom_10'); ?>
+					     </form>
+					 </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+            <?php if($key%4==3): ?> </div> <?php endif; ?>
+            <?php endforeach; ?>
+    </div> 
+</section>
+            

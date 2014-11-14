@@ -1,0 +1,55 @@
+<script type="text/javascript">
+        jQuery(document).ready(function() {
+
+                jQuery('.carousel').elegantcarousel({
+                                delay:200,
+                                fade:300,
+                                slide:800,
+                                effect:'slide',		  			//  fade, slide			  
+                                orientation:'horizontal',		//	horizontal, vertical
+                                captionFade: 150,
+                                loop: true,					//	false, true
+                                autoplay: true,					// 	false, true
+                                time: 4000,
+                                stopAutoplay: false
+                });
+
+
+                // horizontal center of the main  
+                function center_main() {
+                        var window_height = jQuery(window).height();
+                        var main_height = parseInt(jQuery('#main').css('height'));
+                        var main_height_margin = (window_height - main_height) / 2;
+                        jQuery('#main').css('top',Math.floor(main_height_margin));
+                }
+                center_main();
+
+        });
+
+
+</script>
+                
+<div id="slider">
+    	<div class="inner">
+        	<div class="example horizontal">
+            	<div id="carousel-1" class="carousel">
+                	<a class="carousel_prev carousel_left" href="" rel="carousel-1">prev</a>
+                	<div class="carousel_container">
+                        <ul>
+                         
+                        <?php foreach($this->slider['Slides'] as $slide): ?>
+                        <?php if($slide['level'] == 0) continue; ?>
+                                        
+                                        <li><div class="inner"><a href="<?php echo $slide['target_href']; ?>"><img src="/media/photos/<?php echo $slide['PhotoRoot']['offset'] ?>/<?php echo $slide['PhotoRoot']['filename'] ?>" width="188" height="80" /></a>
+                            		<div class="caption"><a href=""><img src="files/images/img_hover.jpg" alt="hover image"/></a></div></div></li>
+                                        
+                                        
+                                       
+                        <?php endforeach; ?>
+                        </ul>
+                	</div>
+                    <a class="carousel_next carousel_right" href="" rel="carousel-1">next</a>
+                </div>
+            </div>
+        </div>
+</div>

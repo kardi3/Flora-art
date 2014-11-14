@@ -1,0 +1,35 @@
+<?php if(isset($this->tree)): ?>
+    <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+        <?php foreach($this->tree as $item): ?>
+            <?php if($item->Translation[$this->language]->slug): ?>
+            <li>
+                <?php if($item->getNode()->hasChildren()):  ?>
+                    <a href="javascript:void(0)" class="d_block color_dark relative"><?php echo str_replace(array('balustrada','schody'),'',$item->Translation[$this->language]->name); ?></a>
+                <?php else: ?>
+                    <a href="<?php echo $this->url(array('category' => $item->Translation[$this->language]->slug), 'domain-i18n:category') ?>" class="d_block color_dark relative"><?php echo str_replace(array('balustrada','schody'),'',$item->Translation[$this->language]->name); ?></a>
+                <?php endif; ?>
+                <?php if($item->getNode()->getChildren()): ?>
+                <?php echo $this->partial('index/category-menu-tree.phtml', 'product', array('subtree' => $item->getNode()->getChildren(), 'parent' => $item, 'language' => $this->language)) ?>
+                <?php endif; ?>
+            </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+<?php elseif(isset($this->subtree)): ?>
+    <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+        <?php foreach($this->subtree as $item): ?>
+            <?php if($item->Translation[$this->language]->slug): ?>
+            <li>
+                <?php if($item->getNode()->hasChildren()):  ?>
+                    <a href="javascript:void(0)" class="d_block color_dark relative"><?php echo str_replace(array('balustrada','schody'),'',$item->Translation[$this->language]->name); ?></a>
+                <?php else: ?>
+                    <a href="<?php echo $this->url(array('category' => $item->Translation[$this->language]->slug), 'domain-i18n:category') ?>" class="d_block color_dark relative"><?php echo str_replace(array('balustrada','schody'),'',$item->Translation[$this->language]->name); ?></a>
+                <?php endif; ?>
+                <?php if($item->getNode()->getChildren()): ?>
+                <?php echo $this->partial('index/category-menu-tree.phtml', 'product', array('subtree' => $item->getNode()->getChildren(), 'parent' => $item, 'language' => $this->language)) ?>
+                <?php endif; ?>
+            </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

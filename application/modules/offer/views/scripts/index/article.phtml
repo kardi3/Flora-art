@@ -1,0 +1,93 @@
+<?php $offer = $this->article;
+$photoRoot = $offer->get('PhotoRoot');?>
+<section class="offer offer-list">
+       
+    <div class="col-md-12 tab-style-1">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                    <!-- strzałka wstecz  &#8592;  --> 
+                    <a class="curr" href="<?php echo $this->url(array(),'domain-offer'); ?>" name="">&#8592; &nbsp;<?php echo $this->translate('Go back to article list') ;?></a>
+              </li>
+            </ul>
+            <div class="tab-description">
+                <div class="offer margin-bottom-30">
+                  <div class="tab-pane row fade in active">
+                    <div class="col-md-3 col-sm-3">
+                      <a href="/media/photos/<?php echo $photoRoot['offset']; ?>/<?php echo $photoRoot['filename']; ?>" class="fancybox-button" name="Image Title" data-rel="fancybox-button">
+                        <img class="img-responsive" src="/media/photos/<?php echo $photoRoot['offset']; ?>/180x140/<?php echo $photoRoot['filename']; ?>" alt="">
+                      </a>
+                      </div>
+                    <div class="col-md-9 col-sm-9">
+                        <span style="float:right;" class="offer-date"><?php echo $this->text()->timeFormat($offer['publish_date'], 'd/m/Y') ?></span>
+                    
+                        <h6><?php echo $offer['Translation'][$this->language]['name'] ?></h6>
+                      <p class="margin-bottom-10"><?php echo $offer['Translation'][$this->language]['description']; ?></p>
+                      
+                    </div>
+                  </div>
+                </div>
+                               
+                              
+                
+            </div>
+          <!-- END TABS -->
+          
+    <?php if($offer->get('PhotoRoot')&&$offer->get('PhotoRoot')->getNode()->hasChildren()): ?>
+            <?php $photoRoot = $offer->get('PhotoRoot');
+            $photo = $photoRoot->getNode()->getFirstChild(); ?>
+            <img src="/media/photos/<?php echo $photo->getOffset(); ?>/<?php echo $this->photoDimension; ?>/<?php echo $photo->getFilename(); ?>" />
+
+    <?php endif; ?>
+    <h2 class="offer-head">
+        
+         <div class="tresc8b"></div>
+
+    </h2>
+
+    <span class="tresc7 listOfferContent showArticle"></span>
+    <div class="gallery-list gallery-box">
+    <?php if($offer->get('PhotoRoot')): ?>
+            <ul>
+                               <?php $photoRoot = $offer->get('PhotoRoot');
+                                foreach($photoRoot->getNode()->getChildren() as $key => $photo):
+                                    if($key == 0)
+                                        continue;
+                                    ?>
+                <li>
+                    <a href="/media/photos/<?php echo $photo['offset'] ?>/<?php echo $photo['filename'] ?>" alt="<?php echo $photo['name'] ?>"
+                                       data-lightview-group='<?php echo $offer['Translation'][$this->language]['slug'] ?>'
+                                       data-lightview-name="<?php echo $photo['name'] ?>"
+                                       class='lightview' 
+                                       data-lightview-options="
+                                           width: 800,
+                                           height: 460,
+                                           viewport: 'false',
+                                         "
+                                       >
+                    <img class="offerPhoto" src="/media/photos/<?php echo $photo->getOffset(); ?>/<?php echo $this->photoDimension; ?>/<?php echo $photo->getFilename(); ?>"  />
+                    </a>
+                </li>  
+                            <?php endforeach; ?>
+            </ul>
+    <?php  endif; ?>
+    </div>
+    <div class="clear"></div>
+    <div class="attachment-list">                
+        <?php if($offer->get('AttachmentRoot')&& $offer->get('AttachmentRoot')->getNode()->hasChildren()): 
+            $attachmentRoot = $offer->get('AttachmentRoot'); ?>
+            <h6>Załączniki: </h6>
+            <ul>
+                <?php foreach($attachmentRoot->getNode()->getChildren() as $attachment): ?>
+                    <li>
+                        <a download href="/media/attachments/<?php echo $attachment->getFilename(); ?>"><?php echo $attachment['Translation'][$this->language]['name']; ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    </div>
+    <div class="clear"></div>
+    <div class="path">
+            <!-- strzałka wstecz  &#8592;  --> 
+            <a class="curr" href="<?php echo $this->url(array(),'domain-offer'); ?>" name="">&#8592; &nbsp;<?php echo $this->translate('Go back to article list') ;?></a>
+    </div>
+</section>

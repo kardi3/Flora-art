@@ -1,0 +1,120 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Message:
+  tableName: newsletter_message
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    type: 
+      type: string(128)
+    title:
+      type: string(255)
+    slug:
+      type: string(255)
+    content:
+      type: clob
+    sent:
+      type: boolean
+      default: 0
+    send_at:
+      type: timestamp
+  relations:
+    Group:
+        refClass: MessageGroup
+        local: message_id
+        foreign: group_id
+        foreignType: many
+        foreignAlias: Messages
+        alias: Groups
+Subscriber:
+  tableName: newsletter_subscriber
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    lastname:
+      type: string(255)
+    email:
+      type: string(255)
+    send:
+      type: boolean
+      default: 0
+Group:
+  tableName: newsletter_group
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+  relations:
+    Subscriber:
+        refClass: SubscriberGroup
+        local: group_id
+        foreign: subscriber_id
+        foreignType: many
+        foreignAlias: Groups
+        alias: Subscribers
+SubscriberGroup:
+  tableName: newsletter_subscriber_group
+  columns:
+    subscriber_id:
+      primary: true
+      type: integer(4)
+    group_id:
+      primary: true
+      type: integer(4) 
+MessageGroup:
+  tableName: newsletter_message_group
+  columns:
+    message_id:
+      primary: true
+      type: integer(4)
+    group_id:
+      primary: true
+      type: integer(4) 
+MessageSubscriber:
+  tableName: newsletter_message_subscriber
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    message_id:
+      type: integer(4)
+    subscriber_id:
+      type: string(255)
+    sent:
+      type: boolean
+      default: 0
+  relations:
+    Message:
+        local: message_id
+        foreign: id
+        foreignType: many
+        type: one
+        foreignAlias: MessageSubscribers
+        alias: Message
+    Subscriber:
+        local: subscriber_id
+        foreign: id
+        foreignType: many
+        type: one
+        foreignAlias: MessageSubscribers
+        alias: Subscriber

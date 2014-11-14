@@ -1,0 +1,67 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    var oTable = $("#message_table").dataTable( {
+        "sPaginationType": "full_numbers",
+        "oLanguage": {
+            "sUrl": "/plugins/tables/dataTables/datatables.polish.txt"
+        },
+        "bFilter": true,
+        "bDestroy": true,
+        "bProcessing": true,
+        "bServerSide": true,
+        "bLengthChange": false,
+        "sAjaxSource": "<?php echo $this->adminUrl('list-subscriber-data', 'newsletter') ?>",
+        "aaSorting": [[ 0, "desc" ]],
+        "aoColumns": [
+            { "bSortable": true, sWidth: '350px' },
+            { "bSortable": true, sWidth: '300px' },
+            null,
+            { "bSortable": false, sWidth: '50px' }
+        ]
+    });
+    
+    $("#message_table").bind("update", function(e) {
+        oTable.fnReloadAjax();
+    });
+    
+});
+</script>
+
+<div class="row-fluid">
+
+    <div class="span12">
+        
+        <div class="box">
+            
+            <div class="title">
+
+                <h4>
+                    <span class="icon16 icomoon-icon-mail-4"></span>
+                    <span><?php echo $this->translate('Newsletter subscribers') ?></span>
+                    <div class="box-form right">
+                        <a href="<?php echo $this->adminUrl('add-subscriber', 'newsletter') ?>" class="btn btn-success btn-mini"><?php echo $this->translate('Add new') ?></a>
+                    </div>
+                </h4>
+                
+            </div>
+            <div class="content clearfix">
+
+                <table id="message_table" cellpadding="0" cellspacing="0" border="0" class="responsive display table table-bordered" width="100%">
+                    <thead>
+                        <th><?php echo $this->translate('Full name / name') ?></th>
+                        <th><?php echo $this->translate('Email') ?></th>
+                        <th><?php echo $this->translate('Groups') ?></th>
+                        <th><?php echo $this->translate('Options') ?></th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            
+            </div>
+
+        </div><!-- End .box -->
+
+    </div>
+
+
+</div>

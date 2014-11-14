@@ -1,0 +1,15 @@
+/* 
+    Document   : tinymce-custom
+    Created on : 2014-09-25, 13:35:23
+    Author     : Your Name <your.name at your.org>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.tab-content > .tab-pane{
+    display:block !important;
+}

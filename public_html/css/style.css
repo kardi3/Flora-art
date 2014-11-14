@@ -1,0 +1,910 @@
+/* style reset */
+
+
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+
+    margin:0;
+
+    padding:0;
+
+}
+
+table {border-collapse:collapse; border-spacing:0;}
+
+fieldset,img {border:0;}
+
+ol,ul {list-style:none;}
+
+caption,th {text-align:left;}
+
+
+
+
+/* global styles */
+
+
+
+
+
+body {
+
+    font-family: "Signika", Sans-Serif;
+
+    font-size: 14px;
+
+		color: #707070; /* #8f8f8f; */
+
+		text-align: center;
+
+
+
+}
+
+
+
+a { text-decoration: underline; color: #184B80; }	
+
+.clear { clear: both; }
+
+.nomarginbottom { margin-bottom: 0 !important; }
+
+.right { float :right; }
+
+.submit { cursor: pointer; }
+
+.left { float :left; }
+
+.center { text-align :center; }
+
+.rightmargin { margin-right: 40px; }
+
+.light { color: #9f9f9f !important; }
+
+
+
+.center .submit  { margin: auto; }
+
+
+
+p.left  { margin-right: 30px; }
+
+
+
+
+
+#container { width :100%; position: relative;  background: #ffffff url("/images/bkg.gif") repeat-x top; 	padding-top: 20px; }
+
+
+
+
+
+
+
+#container .advert { width: 100%; background: transparent url("/images/222.png") repeat 15px 15px; margin-top: -20px; padding-top: 20px; }
+
+
+
+#rozciagnij { width: 42%; position: absolute; height: 207px; top: 20px; z-index: 0; left: 0; background: url("/images/top_bkg.gif") repeat-x top; }
+
+
+
+
+
+#top { width: 1000px; margin: auto; height: 207px; position: relative; z-index: 10000; text-align: left; }
+
+
+
+  #top h1 { width: 404px; background: url("/images/logo_bkg.gif") no-repeat right top; height: 122px; padding: 8px 0 0 18px; position: absolute; top: 0; left: 0; }
+
+	   #top h1 a { display: block; height: 109px; width: 388px; }
+
+		 #top h1 a.wroclaw { background: url("/images/logo_wroclaw.gif") no-repeat left top; }
+
+		 #top h1 a.warszawa { background: url("/images/logo_warszawa.gif") no-repeat left top; }
+
+		 #top h1 a.krakow { background: url("/images/logo_krakow.gif") no-repeat left top; }
+
+		 #top h1 a.slask { background: url("/images/logo_slask.gif") no-repeat left top; }
+
+		 #top h1 a.bydgoszcz { background: url("/images/logo_bydgoszcz.gif") no-repeat left top; }
+
+		 #top h1 a.lodz { background: url("/images/logo_lodz.gif") no-repeat left top; }
+
+		 #top h1 a.kielce { background: url("/images/logo_kielce.gif") no-repeat left top; }
+		 
+		 #top h1 a.opole { background: url("/images/logo_opole.png") no-repeat left top; }
+		 
+		 #top h1 a.rzeszow { background: url("/images/logo_rzeszow.png") no-repeat left top; }
+
+		 #top h1 a.lublin { background: url("/images/logo_lublin.png") no-repeat left top; }
+		 
+		 #top h1 a.gorzow { background: url("/images/logo_gorzow.png") no-repeat left top; }
+		 
+		 #top h1 a.bialystok { background: url("/images/logo_bialystok.png") no-repeat left top; }
+		 
+		 #top h1 a.trojmiasto { background: url("/images/logo_trojmiasto.png") no-repeat left top; }
+		 
+		 #top h1 a.olsztyn { background: url("/images/logo_olsztyn.png") no-repeat left top; }
+		 
+		 #top h1 a.poznan { background: url("/images/logo_poznan.png") no-repeat left top; }
+		 
+		 #top h1 a.szczecin { background: url("/images/logo_szczecin.png") no-repeat left top; }
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+
+        #top h1 a span { display: none; }
+
+
+
+  #top #menu { background: url("/images/menu_bkg.png") no-repeat left top; width: 558px; height: 56px; position: absolute; top: 0; right: 0; padding: 35px 0 39px 10px; }
+
+	  
+			 
+
+  #top #breadcrumbs { width: 596px; height :42px; background: url("/images/breadcrumbs.gif") no-repeat right top; position: absolute; bottom: 1px; left: 0; padding: 20px 0 0 0; }
+
+	
+
+			#top #breadcrumbs .button { position: absolute; top: 13px; right: 17px; height: 31px; width: 31px; background: url("/images/mapa.gif") no-repeat left top; display: block; }
+
+			   #top #breadcrumbs .button span { display: none; }
+
+			
+
+	    #top #breadcrumbs ul li { display: inline; background: url("/images/arr.gif") no-repeat right center; padding: 0 10px 0 3px; font-weight: bold; font-size : 13px;  }
+
+	      #top #breadcrumbs ul li a { color: #aeaeae; text-decoration: none; }
+
+			#top #breadcrumbs ul li.last { background: none; }
+
+	      #top #breadcrumbs ul li.last a { color: #184B80; }
+
+	 
+
+	 
+
+	 
+
+	 
+
+	
+	
+
+
+
+	   #top form#search label { display: block; float: left; width: 85px; text-align: right; color: white; font-size :14px; line-height: 15px; font-weight: bold; padding: 0 8px 0 0; }
+
+	   #top form#search label , #top form#search input { vertical-align: middle; }
+
+	   #top form#search #szuk { width: 223px; height: 24px; background: url("/images/input_search.gif") no-repeat left top; border: 0; padding: 5px 10px 0 10px; color: #c4c4c4; font-size :12px; font-weight: bold; font-family: "Trebuchet MS", Sans-serif; }
+
+	 
+
+	  
+	 
+
+	   #top form#search a { color :white; float :right; font-size: 10px; }
+
+
+
+		 
+
+		 
+
+		 
+
+#juzwkrotce { text-align: center; font-size :13px; padding-top:5px;}	 
+
+		 #juzwkrotce span { margin-left: 30px;font-weight :bold; color: #6c6c6c; }
+
+		 #juzwkrotce strong { color: #2379D6;  }
+
+		 #juzwkrotce a { color: #DA6D02 !important; text-decoration: none; }
+
+		 #juzwkrotce a:hover { text-decoration: underline; }
+
+		 
+
+	 
+
+#content { width: 1000px; margin: auto; padding-top: 12px; text-align: left; }
+
+  #content h3 { font-weight :bold; font-size: 16px; color: #636363; }
+
+	   #content h3 a { text-decoration: none;  }
+
+
+	
+
+  #content #sub { float: left; width: 238px; position: relative; }
+
+	  #content #sub a.addbutton { display: block; height: 48px; background: url("/images/dodajsolarium.gif") no-repeat left top; }
+
+		  #content #sub a.addbutton span { display: none; }
+
+			
+
+			
+
+		#content #sub a#nowanorma { display: block; height: 48px; background: url("/images/nowanorma.gif") no-repeat left top; margin-top: -2px; }
+
+		  #content #sub a#nowanorma span { display: none; }	
+
+		
+
+		#content #sub #strefa { width: 237px; height: 51px; margin: 12px 0 0 0; }	
+
+			#content #sub .st_wroclaw { background: url("/images/button_wroclaw.gif") no-repeat left top; }
+
+			#content #sub .st_krakow { background: url("/images/button_krakow.gif") no-repeat left top; }
+
+			#content #sub .st_warszawa { background: url("/images/button_warszawa.gif") no-repeat left top; }
+
+			#content #sub .st_slask { background: url("/images/button_slask.gif") no-repeat left top; }
+
+			#content #sub .st_bydgoszcz { background: url("/images/button_bydgoszcz.gif") no-repeat left top; }
+
+			#content #sub .st_lodz { background: url("/images/button_lodz.gif") no-repeat left top; }
+
+			#content #sub .st_kielce { background: url("/images/button_kielce.gif") no-repeat left top; }
+			
+			#content #sub .st_opole { background: url("/images/button_opole.png") no-repeat left top; }
+			
+			#content #sub .st_rzeszow { background: url("/images/button_rzeszow.png") no-repeat left top; }
+			
+			
+			#content #sub .st_lublin { background: url("/images/button_lublin.png") no-repeat left top; }
+			
+			#content #sub .st_gorzow { background: url("/images/button_gorzow.png") no-repeat left top; }
+			
+			#content #sub .st_bialystok { background: url("/images/button_bialystok.png") no-repeat left top; }
+			
+			#content #sub .st_trojmiasto { background: url("/images/button_trojmiasto.png") no-repeat left top; }
+				
+				#content #sub .st_olsztyn { background: url("/images/button_olsztyn.png") no-repeat left top; }
+				
+				#content #sub .st_poznan { background: url("/images/button_poznan.png") no-repeat left top; }
+				
+				#content #sub .st_szczecin { background: url("/images/button_szczecin.png") no-repeat left top; }
+
+			
+
+			#hover { display: block; width: 219px; height: 41px; text-align :right; text-decoration: underline; padding :5px 9px; cursor: pointer; }
+
+			
+
+			 #hover .hide { display: none; }
+
+			 #hover:hover .hide { position: absolute; display: block; background: white; border: 1px solid #ababab; padding: 4px 5px; z-index:10000; top: 90px; right: 10px; }
+
+			  #hover:hover .hide a { display: block; z-index:10000;text-decoration: none !important; padding: 3px 5px;  }
+
+				#hover:hover .hide a:hover { background: #eeeeee; z-index:10000; }
+
+			
+
+	  #content #sub #box { background: url("/images/left_bkg.gif") repeat-y left; margin-top: 12px;  }	 
+
+	    #content #sub #box .ins { background: url("/images/left_top.gif") no-repeat left top; min-height: 220px; padding: 21px 20px 0 20px; }
+
+	    #content #sub #box .bot { background: url("/images/left_bottom.gif") no-repeat left bottom; height: 21px;  }
+
+	  
+
+		
+
+		
+
+		  #content #sub ul.top_three li { padding:  0 0 0 36px; min-height: 31px; position: relative;  }
+
+			#content #sub ul li.miejsce1 { background: url("/images/miejsce1.gif") no-repeat left center; margin: 7px 0 0 0; }
+
+			#content #sub ul li.miejsce2 { background: url("/images/miejsce2.gif") no-repeat left center; margin: 10px 0 0 0; }
+
+			#content #sub ul li.miejsce3 { background: url("/images/miejsce3.gif") no-repeat left center; margin: 10px 0 15px 0; }
+
+			
+
+			
+
+		     #content #sub ul.top_three li h5, #content #sub ul.top_three li h5 a, #content #main .promowane ul li h5, #content #main .promowane ul li h5 a { color: #DA6D02; font-size: 15px; font-weight: bold; line-height: 15px; text-decoration: none;  }
+
+		     #content #sub ul.top_three li p, #content #sub ul.top_three li p a, #content #main .promowane ul li p, #content #main .promowane ul li p a { margin: 0; padding: 0; color: #707070; /*8f8f8f;*/ text-decoration: none;  }
+
+				 
+
+				 
+
+				 
+
+		 #content #sub h6 { font-weight: bold; color: #D5D5D5; font-size :14px; margin: 20px 0 10px 5px; } 
+
+				 
+
+		 #content #sub .reklama { text-align: center; }		 
+
+				 
+
+	#content #main .promowane { width: 225px; float :right; }
+
+	   #content #main .promowane ul { padding: 10px 0 0 0 ; }
+
+	     #content #main .promowane ul li { margin-bottom: 5px; border: 3px solid #ffffff; padding: 2px 4px; }
+
+		
+
+	#content #main { width: 777px; float: right;position: relative;  } 
+
+	  #content #main .ins { background: url("/images/bkg_right.gif") repeat-x top; min-height: 320px; padding:  12px 15px;  }
+
+	 
+
+	 
+
+		#content #main .artykuly { width: 440px; float: left; padding-right: 15px; background: url("/images/line.gif") no-repeat right 10px; position: relative; text-align: justify; }
+
+		  #content #main .artykuly h6 { position: absolute; top: 0px; right: 15px; color: #d8d8d8;  font-weight: normal; text-transform: lowercase; font-style: italic; }
+
+			#content #main .artykuly a { color: #1D8EC9; }
+
+			
+
+
+
+	       #content #main .artykuly p img { float: left; margin: 0 5px 0 0; }
+
+				 
+
+	    #content #main .artykuly h3 { color: #DA6D02; font-size: 16px; font-weight: bold; margin-bottom :5px; }
+
+			
+
+			
+
+			#content #main .artykuly .mniejsze1, #content #main .artykuly .mniejsze2 { width: 215px; float: left; margin-top: 10px; }
+
+			#content #main .artykuly .mniejsze1 { margin-right: 10px; }
+
+			#content #main .artykuly .more { float: right; clear: both; }
+
+		
+
+	 
+
+		#content div.bugs { padding: 10px; background: #FED6D6; width: 50%; border: 1px solid #FF9696; margin-top :10px; color: #5B5B5B; }
+
+	 
+
+	  #content form input, #content form select, #content form option { font-family: "Trebuchet MS", Sans-serif; font-size: 11px; color: #808080; padding :1px; }
+
+	 
+
+	 
+
+	 input[disabled] { background: #eaeaea!important; }
+
+	 
+
+	 
+
+	  #content #add , #content #add2{ padding: 10px; } 
+
+		  #content #add p.coment { margin-top: 8px; color: #a7a7a7; }
+
+	    #content #add label { width: 60px; float: left; padding: 5px 5px 0 0; display: block; }
+
+			
+
+			
+
+	    #content #add input, #content #add select { width: 250px; float: left; vertical-align: middle; background: white; border: 1px solid #c5c5c5; }
+
+			
+
+			 #content #add p.likeinput { width: 250px; float: left; vertical-align: middle; background: white;  }
+
+			
+
+			
+
+			#content #add option { width: 230px; }
+
+			
+
+	    #content #add label, #content #add input, #content #add select, #content #add p.likeinput { margin-top :8px; }
+
+	   #content #add input.checkbox { width: auto; margin : 15px 10px 0 0; }
+
+	   #content #add label.checkbox  { width: 280px; }
+
+		 
+
+	   #content #add .submit, #content #add2 .submit { width: 150px; background: #f0f0f0; color: black; }
+
+	   #content #add .warning { border: 2px solid red !important; }
+
+	 
+
+	 
+
+	 
+
+	   #content #add2 input { border: 1px solid #c5c5c5; } #content #add2 input.hidden { border: 0; }
+
+      #content #add2 .submit { margin-left :172px;  }	 
+
+	 
+
+	 
+
+	   #content #add2 h5, #content #add h5 { font-size: 14px; margin: 6px 0; border-bottom: 1px solid #dddddd; width: 85%; }
+
+		  #content #add h5 { margin-top: 15px; }
+
+		 
+
+		 #content #add2 input, #content #add2 label { display: inline; vertical-align: bottom; width: auto; margin: 8px 8px 0 0; }
+
+		 #content #add2 input { width: 150px;}
+
+		 #content #add2 input.chk { width :auto; vertical-align: middle; } 
+
+		 
+
+     #content #add2 input.chk2 { width :auto; vertical-align: middle; margin-top: 23px; } 
+
+		 #content #add2 input.dlugi { width :300px; }
+
+		 
+
+	   #content #add2 .info { padding: 0 0 7px 10px; }
+
+		 
+
+		 
+
+		   #content #add2 .left { float: left; margin-right: 18px ;  }
+
+			 #content #add2 .right { float: left; }
+
+			   #content #add2 .info .right h6 { font-size :13px; margin: 5px 0 5px 0;}
+
+			 
+
+	    #content #add2 label.opcja { width: 150px; float: left; padding: 0 5px 0 0; display: block; font-size: 12px; }
+
+	    #content #add2 label.opcja_dl { width: 160px; float: left; padding: 0 5px 0 0; display: block; }
+
+			#content #add2 label.opcja_mega { width: 440px; float: left; padding: 0 5px 0 0; display: block; }
+
+			
+
+			
+
+			
+
+	    #content #add2 .godziny { float: left; margin: 8px 0; }
+
+			
+
+	      #content #add2 .godziny label.day { width: 60px;  float: left; padding: 0 5px 0 0; display: block; }
+
+				#content #add2 .godziny select { padding: 0; margin-top: 3px; }
+
+				
+
+	#content .lista { padding :10px; }			
+
+	
+
+		 #content .lista li { margin-bottom: 10px; border :5px solid #f9f9f9; padding :8px; background: white; color :#7d7d7d;  position: relative; }	
+
+		   #content .lista li p  { padding: 0 4px; margin: 0; }
+
+		 
+
+		   #content .lista li h4 { font-size :14px; font-weight: bold; border-bottom: 3px solid #fafafa; }
+
+		     #content .lista li h4 a { text-decoration: none; color:#7d7d7d; }
+
+			 #content .lista li img { vertical-align: middle; }	 
+
+			
+
+			#content .lista li img.nowelampy { position: absolute; top: 10px; right: 250px; width :40px; height: 35px; }
+
+				 
+
+				 
+
+		   #content .lista li .left { width :180px; float: left; margin-right: 20px; font-size: 12px; }
+
+			 #content .lista li a.galeria { text-decoration: none; color: #707070; }
+
+			   #content .lista li a.galeria:hover { text-decoration: underline;  }
+
+			 
+
+			 
+
+		   #content .lista li .logo { float: right; width: 220px; background: white; border: 3px solid #fafafa; margin : 0 0 0 8px; text-align: center; padding: 0; }
+
+			 
+
+			 #content .lista a.link { position :absolute; bottom: 8px; right: 20px; z-index: 10000; }
+
+			 
+
+			 #content .lista li p { margin-top: 8px; display: block; }
+
+			 #content .lista li p.adres { padding-left :10px; }
+
+			 
+
+		 #content .lista li.wyroznienie { border: 5px solid #FEFDB9; }
+
+
+
+	
+
+	
+
+	
+
+	#content .strony { text-align :center; padding: 10px; font-size :11px; }
+
+		 #content .strony a { color: #a0a0a0; text-decoration: none;  } 
+
+	   #content .strony a.act { color: #184B80;  text-decoration:underline; }
+
+	
+
+	
+
+	#content .artykul img { border: 11px solid white; float: right; margin: 3px 0 0 3px; }
+
+	#content .seealso { padding: 5px 0; margin: 10px 0 0 0; display: block; border-top: 1px solid #eeeeee; }
+
+	  #content .seealso ul li  { list-style: disc inside; margin-left: 10px; }
+
+	
+
+	#content .text .reklama { float: right; width :470px; padding-top: 15px; margin-left: 10px; }
+
+	#content .reklama_dol { text-align :center; padding-top :20px; margin-top: 7px; border-top: 1px solid #f0f0f0; }
+
+	
+
+	
+
+	#content .text div.left { float: left; width :45%; margin-right :20px; }
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	#content .commentpanel { clear: both; padding: 8px 12px;  color: white; text-transform: uppercase; font-size :10px; background: #E39924; font-weight: bold; margin: 10px 0; position: relative; }
+
+	  #content .commentpanel a { text-transform: lowercase; font-size :11px; font-weight: normal; color: white; margin-left: 30px;  } 
+
+	
+
+	
+
+	#content div.koment { border: 2px solid #f0f0f0; padding: 8px; margin-top: 10px; }
+
+	  #content div.koment h6  { display: block; font-size: 12px; font-weight: bold; border-bottom: 1px solid #f0f0f0 ; }
+
+		#content div.koment .oc { float: right; font-size :10px; background: white; padding: 0 0 0 10px; border-left: 1px solid #f0f0f0  }
+
+	    #content div.koment .oc em { display: block; clear: left; float: left; width: 100px; line-height: 12px; }
+
+	    #content div.koment .oc img { float :left; } 
+
+	
+
+	#content a.back { text-decoration: none; font-size: 11px; margin-left:20px; }
+
+		#content a.back:hover { text-decoration: underline; }	 
+
+		
+
+	#content a.addcomment { text-decoration: none; font-size: 11px; margin-left:20px; font-weight: normal;  }
+
+		#content a.addcomment:hover { text-decoration: underline; }	 	
+
+		
+
+		
+
+			 
+
+	#content form.koment { padding :10px; }
+
+	  #content form.koment label { display: block; float: left; width: 100px; }
+
+		#content form.koment p { float: right; width: 300px; padding: 7px 130px 0 0; line-height: 12px; display: block; font-size: 10px; }
+
+		#content form.koment label.long { width :400px; }
+
+	  #content form.koment label, #content form.koment input, #content form.koment select { margin-top: 8px; }
+
+	  form.koment select { width: 50px; }
+
+	    form.koment select, form.koment select option {text-align: center; }
+
+		#content form.koment .left { margin: 15px 20px 20px 0; }	
+
+			
+
+	#content form.search { padding: 3px; }
+
+	  #content form.search h4{ font-size: 15px; padding: 10px 0 8px 0; }
+
+	  #content form.search label  { float: left; width: 140px; }
+
+		  #content form.search label.krotki { width: 20px; }
+
+			#content form.search label.dlugi  { width: 220px; }
+
+			#content form.search label.sredni { width: 50px; }
+
+	  #content form.search input, #content form.search select { float : left; margin: 0 7px 0 7px; padding: 2px 3px; }
+
+		#content form.search input.text { width: 200px; }
+
+		#content form.search select.text { width: 210px; }
+
+	  #content form.search input.checkbox { width: auto; } 
+
+		#content form.search select.ocena { width: 50px; }
+
+		  #content form.search select.ocena option { text-align: center; }
+
+		
+
+		#content form.search input.krotki { width: 40px; }
+
+		#content form.search .submit { float: none; width: 130px; }		 
+
+		#content form.search input, #content form.search label, #content form.search select  { vertical-align: middle; margin-top: 4px;  }
+
+	
+
+	
+
+	 #content #main ul.toparch { list-style: decimal outside; margin: 10px 40px 20px;  }
+
+	   #content #main ul.toparch a { text-decoration: none; }
+
+	   #content #main ul.toparch h5 a {color: #2379D6;; font-size: 13px; }
+
+	   #content #main ul.toparch p a { color: #707070; /*8f8f8f;*/}
+
+		 #content #main ul.toparch h5 { width: 170px; float: left; }
+
+		 #content #main ul.toparch p { display: inline; }
+
+		 #content #main ul.toparch li { clear: both; padding-bottom: 4px; } 
+
+		 
+
+	
+
+  /* -------------- Strona glowna */
+
+	
+
+	
+
+	
+	
+
+	
+
+	
+
+	  #content .line { border-bottom: 1px solid #e8e8e8; margin: 0 0 15px 0; padding: 0 0 15px 0;  }
+
+	
+
+	
+.listaart {width: 120px; height: 120px;}
+		
+.zobaczwszystkie {text-align: center;color: rgb(235, 126, 19);font-size: 15px;line-height: 27px;
+font-variant: small-caps;}
+
+	  #content .lewa p img { float: left; margin: 0 6px 2px 0; width: 120px; height: 120px;}
+
+		  #content .lewa .lewa { width: 210px; padding-right: 9px;  background: 0; border-right: 1px solid #e8e8e8; }
+
+			
+				 
+
+				 
+
+				 
+
+				 
+
+			 
+
+		#content .mapa { width :470px; min-height: 280px; padding-top: 30px;  float: right; }	 
+
+	
+
+	  #content .dzielnice { width: 195px; padding: 15px 0 0 15px; color: #b4b4b4; font-weight: bold;  }
+
+	   #content .dzielnice li { list-style: disc outside; }
+
+	     #content .dzielnice li a { text-decoration: none; color: #E49445; }
+
+			 #content .dzielnice li a:hover { text-decoration: underline; }
+
+			 
+
+			 
+
+	
+
+	  #content a.button_all { display: block; background: url("/images/pokazwszystkie.gif") no-repeat left top; width: 126px; height :34px;  position: absolute; right: 52px; top :2px; }
+
+		
+
+	    #content a.button_all span { display: none; }
+
+	
+
+	  div.dol { position: relative; }
+
+	
+
+div.text p { margin-bottom: 20px; }	
+
+div.text ul { list-style: square inside; }
+
+div.text h3.regulamin { padding :10px 0 10px 0; text-align: center; font-size :15px; font-weight: bold; }	
+
+	div.text a.button_dodaj { width :199px; height: 46px; background: url("/images/button_dodaj.gif") no-repeat left top; display :block; margin: auto; }
+
+	  div.text a.button_dodaj span { display: none; }
+
+	  div.text .center { text-align: center !important; }
+
+	  div.text h2.mini{ font-size: 14px !important; font-weight: bold !important;  }
+
+	
+
+	
+
+	
+
+  div.art { margin: 5px 0 10px 0; border: 8px solid #fafafa; padding :5px; background: white; }
+
+  div.art h4, div.art h4 a { color: #2379D6; font-size: 13px; text-decoration: none; }	
+
+	div.art h4 a:hover { text-decoration: underline; }
+
+	div.art a.more { float: right; }
+
+	div.art img { float: left; border: 8px solid #fafafa; margin-right :5px;  }
+
+	
+
+	
+
+div.solar { padding-bottom: 20px; }
+
+
+
+div.solar .logo { width: 234px; background: white; padding: 7px 0 7px 0; text-align :center ; margin-bottom: 10px;  }
+
+	 div.solar .logo img { float: none; margin: 0; border: 7px solid white;  }
+
+	
+
+	 div.solar .googlemap { overflow: auto; border: 7px solid white; width:  }
+
+	 
+
+	 div.solar .left { float: left; margin-right: 30px; width: 190px ;}
+
+	 div.solar .right { width: 250px; }
+
+	 
+
+	 div.solar .kabina { float: left; margin-right: 19px;  width: 180px ; display: block; margin-bottom: 15px; padding-right: 12px;  }
+
+	    div.solar .kabina h5 { border: 0; }
+
+	    div.solar .lampy { background: url("/images/nowelampy_sol.gif") no-repeat right top;  }
+
+	    div.solar .kabina ul { list-style: square inside url("/images/opcja.gif"); padding: 6px 0; }
+
+			div.solar .kabina img { float: right; width: 39px; height: 29px; }
+
+			div.solar .kabina span.nowelampy { display: none; }
+
+			
+
+			
+
+		 
+
+	 div.solar p { margin :0; }	 
+
+	 div.solar h5 { font-size: 13px; font-weight: bold; padding-bottom: 2px; margin-bottom: 3px; border-bottom: 1px solid white;  }	 
+
+
+	 div.solar ul.opcje { padding: 5px;  }
+
+	  
+	 
+
+	 div.solar div.oceny { clear: right; padding : 25px 7px 5px 7px; width :220px; }
+
+	    div.solar div.oceny em { width: 140px; margin-bottom:10px;line-height:20px;font-size:12px;font-style:normal;float :left; clear :left;  }
+
+			
+
+	 div.solar div.clr { clear :left; }	
+
+	 
+
+	 div.solar h3 { padding: 15px 0 10px 0; }
+
+	 div.solar h3.clr { float: left; clear: left; }
+
+	 
+
+	 
+
+	 div.solar ul.galeria { width: 450px; display :block; clear :left;  }
+
+	   div.solar ul.galeria li { display: block; float: left; padding: 0 15px 15px 0;}
+
+		   div.solar ul.galeria li img { border: 5px solid #eaeaea; height :120px; width: 120px;  }
+
+		 
+
+		 
+
+#footer { padding: 15px 15px 15px 0; width: 970px; margin: auto;  margin-top: 30px; text-align: right; border-top: 1px dashed #dadada; background: #ffffff;}
+
+   #footer a { text-decoration: none; font-weight: bold; }
+
+
+
+   #footer ul { float: left; }
+
+	    #footer ul a { font-weight: normal; color: #b0b0b0; }
+
+			#footer ul a:hover { text-decoration: underline!important; }
+
+      #footer ul li { display: inline; margin-right :10px; }
+
+			
+			
+			
+			
+	#baloniki { background: url("/images/urodzinowo.gif") no-repeat left top; width: 215px; height: 97px; position: absolute; top: -20px; left: 150px; z-index: 10000000000; }		
+			
+

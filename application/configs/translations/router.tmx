@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+   <header creationtoolversion="1.0.0" datatype="winres" segtype="sentence"
+           adminlang="en-us" srclang="pl-pl" o-tmf="abc"
+           creationtool="XYZTool" >
+   </header>
+   <body>
+       <tu tuid='about-us'>
+           <tuv xml:lang="pl"><seg>o-nas</seg></tuv>
+       </tu> 
+       <tu tuid='articles'>
+           <tuv xml:lang="pl"><seg>artykuly</seg></tuv>
+       </tu>
+       <tu tuid='banners'>
+           <tuv xml:lang="pl"><seg>bannery</seg></tuv>
+       </tu>
+       
+       <tu tuid='category'>
+           <tuv xml:lang="pl"><seg>kategoria</seg></tuv>
+       </tu> 
+       <tu tuid='contact'>
+           <tuv xml:lang="pl"><seg>kontakt</seg></tuv>
+       </tu> 
+       <tu tuid='gallery-list'>
+           <tuv xml:lang="pl"><seg>nasze-realizacje</seg></tuv>
+       </tu> 
+       <tu tuid='news'>
+           <tuv xml:lang="pl"><seg>aktualnosci</seg></tuv>
+       </tu>
+       <tu tuid='page'>
+           <tuv xml:lang="pl"><seg>strona</seg></tuv>
+       </tu>
+       <tu tuid='period'>
+           <tuv xml:lang="pl"><seg>okres</seg></tuv>
+       </tu>
+       <tu tuid='producer'>
+           <tuv xml:lang="pl"><seg>producent</seg></tuv>
+       </tu> 
+       <tu tuid='products'>
+           <tuv xml:lang="pl"><seg>produkty</seg></tuv>
+       </tu> 
+       <tu tuid='product'>
+           <tuv xml:lang="pl"><seg>produkt</seg></tuv>
+       </tu>
+       <tu tuid='profile'>
+           <tuv xml:lang="pl"><seg>profil</seg></tuv>
+       </tu>
+       <tu tuid='rules'>
+           <tuv xml:lang="pl"><seg>regulamin</seg></tuv>
+       </tu>
+       <tu tuid='settings'>
+           <tuv xml:lang="pl"><seg>ustawienia</seg></tuv>
+       </tu>
+       <tu tuid='site-map'>
+           <tuv xml:lang="pl"><seg>mapa-strony</seg></tuv>
+       </tu> 
+   </body>
+</tmx>

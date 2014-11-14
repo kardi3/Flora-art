@@ -1,0 +1,12 @@
+<?php echo $this->partial('index/edit-partial.phtml','admin',
+        array(
+            'form' => $this->form,
+            'languages' => $this->languages,
+            'adminLanguage' => $this->adminLanguage,
+            'language' => $this->language,
+            'actionName' => 'product',
+            'moduleName' => 'product',
+            'element' => $this->product,
+            'parent' => $this->parent,
+            'categoryTree' => $this->categoryTree,
+        )); ?>

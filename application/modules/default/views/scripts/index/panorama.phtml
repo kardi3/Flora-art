@@ -1,0 +1,63 @@
+<script>
+    $(document).ready(function(){
+	$(".panorama").panorama_viewer({
+        repeat: true
+      });
+      
+//      var width = $('body').innerWidth();
+//      var items_count = $('.menuItems').length;
+//      
+//      var offset = (width - 200 * items_count) / (items_count + 1);
+//
+//    setTimeout(function(){ 
+//	$('.menuItems').each(function(key){
+//		var left = offset * (key+1) + (200*key);
+//		$(this).fadeIn(1000);
+//	       $(this).delay(1000).animate({
+//	       top:'0px',
+//	       right:'inherit',
+//	       position:'relative',
+//	       left:left+'px',
+//	       marginTop:'0px',
+//	       marginLeft:'0px'
+//	    }, { duration: 100, queue: false })
+//	    });
+//	},1000);
+	
+    
+   
+    
+      setTimeout(function(){ 
+       $("#doorRight").animate({
+       width:'0px',
+    marginLeft:'100%'
+    }, { duration: 2000, queue: false });
+
+     $("#doorLeft").animate({
+       width:'0px',
+    }, { duration: 2000, queue: false });
+   
+    
+    }, 1000);
+    setTimeout(function(){ 
+     $(".doors").hide();
+       
+ },3000);
+    });
+    
+</script>
+<div class="panorama">
+    <img src="/plugins/panorama/demo_photo.jpg" />
+    
+</div>
+<!--<div class="doors">
+    <div id="doorLeft" class="doorPart">
+	<img src="/img/_log1.png" alt="International Scaffolding ANNA CISZEK logo" class="mainLogo frontLogo" style="width:50px;">
+    </div>
+    <div id="doorRight" class="doorPart">
+	<img src="/img/_log1.png" alt="International Scaffolding ANNA CISZEK logo" class="mainLogo frontLogo" style="width:50px;">
+    </div>
+    
+</div>-->
+
+<?php //echo $this->homepage->Translation[$this->language]->description; ?>

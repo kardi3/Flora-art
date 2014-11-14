@@ -1,0 +1,8 @@
+2014-10-11T20:18:34+02:00 WARN (4): Unknown record property / related component "MenuRoot" on "Menu_Model_Doctrine_Menu"
+2014-10-11T20:19:53+02:00 WARN (4): Unknown record property / related component "MenuRoot" on "Menu_Model_Doctrine_Menu"
+2014-11-04T21:17:33+01:00 WARN (4): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) LIMIT 1' at line 1. Failing Query: "SELECT `m`.`id` AS `m__id`, `m`.`offset` AS `m__offset`, `m`.`filename` AS `m__filename`, `m`.`title` AS `m__title`, `m`.`crop_data` AS `m__crop_data`, `m`.`root_id` AS `m__root_id`, `m`.`lft` AS `m__lft`, `m`.`rgt` AS `m__rgt`, `m`.`level` AS `m__level` FROM `media_photo` `m` WHERE (`m`.`id` = ?) LIMIT 1"
+2014-11-04T21:17:44+01:00 WARN (4): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) LIMIT 1' at line 1. Failing Query: "SELECT `m`.`id` AS `m__id`, `m`.`offset` AS `m__offset`, `m`.`filename` AS `m__filename`, `m`.`title` AS `m__title`, `m`.`crop_data` AS `m__crop_data`, `m`.`root_id` AS `m__root_id`, `m`.`lft` AS `m__lft`, `m`.`rgt` AS `m__rgt`, `m`.`level` AS `m__level` FROM `media_photo` `m` WHERE (`m`.`id` = ?) LIMIT 1"
+2014-11-06T21:02:45+01:00 WARN (4): 5.7.1 Sender address rejected
+
+2014-11-06T21:06:15+01:00 WARN (4): 5.7.1 Sender address rejected
+

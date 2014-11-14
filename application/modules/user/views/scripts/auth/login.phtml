@@ -1,0 +1,30 @@
+<section id="login">
+    Zarejestrowałeś już swoją siłownie? Tu możesz się zalogować do swojego konta aby zmienić jej dane. 
+    <br />
+        <h3><?php echo $this->translate('Log in') ?></h3>
+    <div class="login_content">
+        
+        <div class="left">
+            
+            <?php if($this->messages()->count()): ?>
+                <?php echo $this->messages()->render() ?>
+            <?php endif; ?>
+            <form class="form-horizontal" action="<?php echo $this->loginForm->getAction() ?>" method="<?php echo $this->loginForm->getMethod() ?>" enctype="<?php echo $this->loginForm->getEnctype() ?>"> 
+                    <?php echo $this->loginForm->username ?>
+                    <?php echo $this->loginForm->password ?>
+                    <a class="forgot_password" href="<?php echo $this->url(array(), 'domain-recover-password') ?>"><?php echo $this->translate('Forgot password?') ?></a>
+                <?php echo $this->loginForm->submit ?>
+            </form>
+        </div>
+
+        <div class="bottom">
+            <div class="line"></div>
+            <span>
+                Nie zarejestrowałeś jeszcze swojej siłowni? 
+                <a href="<?php echo $this->url(array(), 'domain-add-gym') ?>">
+                    Kliknij tutaj!
+                </a>
+            </span>
+        </div>
+    </div>
+</section>

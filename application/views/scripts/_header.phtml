@@ -1,0 +1,32 @@
+<header role="banner" class="relative">
+    <hr>
+    <section class="header_bottom_part bg_light">
+        <div class="container">
+            <div class="d_table w_full d_xs_block">
+                <!--logo-->
+		<div class="col-lg-2 col-md-10 col-sm-10 d_table_cell d_xs_block f_none v_align_m logo t_xs_align_c">
+                    <a href="<?php echo $this->url(array(), 'domain-i18n:homepage') ?>" class="d_inline_m m_xs_top_20 m_xs_bottom_20">
+                        <img src="/images/layout/floraart-logo.png" style="max-width:200px" alt="Flora art - bukiety ślubne">
+                    </a>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10 t_align_r d_table_cell d_xs_block f_none">
+                    <div class="relative clearfix t_align_r">
+                        <button id="menu_button" class="r_corners tr_all color_blue db_centered m_bottom_20 d_none d_xs_block">
+                            <i class="icon-menu"></i>
+                        </button>
+                        <nav role="navigation" class="d_inline_m d_xs_none m_xs_right_0 m_right_15 t_align_l m_xs_bottom_15">
+			    <?php echo $this->action('main-menu','index','menu'); ?>
+			</nav>
+			<div class="relative d_inline_m search_buttons d_xs_none">
+                            <button class="icon_wrap_size_2 circle color_grey_light_2 tr_all color_purple_hover"><i class="icon-cancel"></i></button>
+                            <button class="icon_wrap_size_2 active circle color_grey_light_2 tr_all color_purple_hover"><i class="icon-search"></i></button>
+                        </div>
+                        <form role="search" action="/szukaj" method="GET" class="bg_light animate_ vc_child t_align_r fw_light tr_all trf_xs_none">
+                            <input type="text" name="search" placeholder="Wyszukaj w serwisie" class="r_corners d_inline_m">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

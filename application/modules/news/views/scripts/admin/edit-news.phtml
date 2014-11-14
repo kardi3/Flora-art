@@ -1,0 +1,15 @@
+<script>
+    $(document).ready(function(){
+	$('#tag_id').select2();
+    });
+</script>
+<?php echo $this->partial('index/edit-partial.phtml','admin',
+        array(
+            'form' => $this->form,
+            'languages' => $this->languages,
+            'adminLanguage' => $this->adminLanguage,
+            'language' => $this->language,
+            'actionName' => 'news',
+            'moduleName' => 'news',
+            'element' => $this->news
+        )); ?>

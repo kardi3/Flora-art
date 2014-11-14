@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.1.1
+Version: 3.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+ 
+<!-- Head BEGIN -->
+<head>
+  <?php echo $this->render('_head.phtml'); ?>
+</head>
+<!-- Head END -->
+ 
+<!-- Body BEGIN -->
+<body class="corporate">
+      <?php echo $this->render('_header.phtml'); ?>
+    <div class="main">
+      <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-12 col-sm-12">
+            <div class="row margin-bottom-40">
+             
+               <div class="col-md-3 front-skills">
+                   <?php echo $this->layout()->topGyms; ?>
+
+                   <?php echo $this->layout()->banner_left; ?>
+               </div>
+               
+               <?php echo $this->layout()->top_navi; ?>
+                
+               <?php echo $this->layout()->banner_top; ?>
+ 
+                <!-- END CAROUSEL -->
+                
+<!-- TABS -->
+          <div class="col-md-9 tab-style-1">
+            <?php echo $this->layout()->content; ?>
+          </div>
+ 
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+  </div>
+        <?php echo $this->render('_footer.phtml'); ?>
+</body>
+<!-- END BODY -->
+</html>

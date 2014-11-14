@@ -1,0 +1,593 @@
+<script>
+    var api;
+    jQuery(document).ready(function() {
+    api =  jQuery('.banner').revolution(
+    {
+        delay:5000,
+	startheight:300,
+	startwidth:960,
+
+	hideThumbs:100,
+
+	thumbWidth:100,	// Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+	thumbHeight:50,
+	thumbAmount:5,
+
+	navigationType:"bullet",    // bullet, thumb, none
+	navigationArrows:"verticalcentered",   // nexttobullets, solo (old name verticalcentered), none
+
+	navigationStyle:"round",    // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+
+
+	navigationHAlign:"center",  // Vertical Align top,center,bottom
+	navigationVAlign:"bottom",  // Horizontal Align left,center,right
+	navigationHOffset:0,
+	navigationVOffset:20,
+
+	soloArrowLeftHalign:"left",
+	soloArrowLeftValign:"center",
+	soloArrowLeftHOffset:20,
+	soloArrowLeftVOffset:0,
+
+	soloArrowRightHalign:"right",
+	soloArrowRightValign:"center",
+	soloArrowRightHOffset:20,
+	soloArrowRightVOffset:0,
+
+	touchenabled:"on", // Enable Swipe Function : on/off
+	onHoverStop:"on",   // Stop Banner Timet at Hover on Slide on/off
+
+
+
+	stopAtSlide:-1,
+	stopAfterLoops:-1,
+
+	shadow:1,   //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows  (No Shadow in Fullwidth Version !)
+	fullWidth:"off"	// Turns On or Off the Fullwidth Image Centering in FullWidth Modus
+    });
+});
+</script>
+    <div class="bannercontainer responsive">
+        <div class="exhibitionPicture">
+            <img src="../images/layout/bannerOverlay01.png"/>
+        </div>
+        <div class="banner">
+            <ul>
+                <!-- THE FIRST SLIDE -->
+		<li data-transition="3dcurtain-vertical" data-slotamount="10" data-masterspeed="300" data-thumb="images/thumbs/thumb1.jpg">
+                    <!-- THE MAIN IMAGE IN THE SLIDE -->
+                    <img src="/media/elfinder/slidery/banner01a.jpg" style="width: 960px; height: 300px;">
+
+                    <!-- THE CAPTIONS OF THE FIRST SLIDE -->
+                    <div class="caption large_text sfb"
+                        data-x="44"
+			data-y="47"
+			data-speed="300"
+			data-start="800"
+			data-easing="easeOutExpo">KUCHENNE INSPIRACJE</div><!--
+
+                    <div class="caption randomrotate"
+			data-x="48"
+			data-y="131"
+			data-speed="600"
+			data-start="1100"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p1.jpg" alt="Image 2"></div>
+
+                    <div class="caption randomrotate"
+			data-x="90"
+			data-y="206"
+			data-speed="600"
+			data-start="1200"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p2.jpg" alt="Image 3"></div>
+
+                    <div class="caption randomrotate"
+			data-x="205"
+			data-y="140"
+			data-speed="600"
+			data-start="1300"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p3.jpg" alt="Image 4"></div>
+
+                    <div class="caption randomrotate"
+			data-x="188"
+			data-y="246"
+			data-speed="300"
+			data-start="1400"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p4.jpg" alt="Image 5"></div>
+
+                    <div class="caption randomrotate"
+			data-x="55"
+			data-y="316"
+			data-speed="600"
+			data-start="1500"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p5.jpg" alt="Image 6"></div>
+
+                    <div class="caption randomrotate"
+			data-x="173"
+			data-y="329"
+			data-speed="300"
+			data-start="1600"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p6.jpg" alt="Image 7"></div>
+
+                    <div class="caption randomrotate"
+			data-x="255"
+			data-y="294"
+			data-speed="300"
+			data-start="1700"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p7.jpg" alt="Image 8"></div>
+
+                    <div class="caption randomrotate"
+			data-x="275"
+			data-y="166"
+			data-speed="300"
+			data-start="1800"
+                        data-easing="easeOutExpo"  ><img src="/images/slides/p8.jpg" alt="Image 9"></div>
+
+                    <div class="caption randomrotate"
+			data-x="84"
+			data-y="113"
+			data-speed="300"
+			data-start="1900"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p9.jpg" alt="Image 10"></div>
+
+                    <div class="caption randomrotate"
+			data-x="26"
+			data-y="225"
+			data-speed="300"
+			data-start="2000"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p10.jpg" alt="Image 11"></div>
+
+                    <div class="caption randomrotate"
+			data-x="110"
+			data-y="187"
+			data-speed="300"
+			data-start="2100"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p11.jpg" alt="Image 12"></div>
+                    <div class="caption randomrotate"
+			data-x="183"
+			data-y="221"
+			data-speed="300"
+			data-start="2200"
+			data-easing="easeOutExpo"  ><img src="/images/slides/p12.jpg" alt="Image 13"></div>-->
+                </li>
+
+                <!-- THE SECOND SLIDE -->
+                <li data-transition="papercut" data-slotamount="15" data-masterspeed="300" data-delay="9400" data-thumb="/images/thumbs/thumb2.jpg">
+                    <img src="/media/elfinder/slidery/banner01b.jpg" style="width: 960px; height: 300px;" >
+
+                    <div class="caption large_text sfb"
+                        data-x="44"
+			data-y="47"
+			data-speed="300"
+			data-start="800"
+			data-easing="easeOutExpo">ZMIANA EKSOPZYCJI</div><!--
+
+                    <div class="caption big_white lfl stl"
+			data-x="18"
+			data-y="333"
+			data-speed="300"
+			data-start="800"
+			data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >MOVE CAPTIONS IN AND OUT ON ONE SLIDE</div>
+
+                    <div class="caption lft ltb"
+			data-x="500"
+			data-y="0"
+			data-speed="600"
+			data-start="1100"
+			data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="/images/slides/drink1.jpg" alt="Image 3"></div>
+
+                    <div class="caption bold_red_text sft stb"
+			data-x="720"
+			data-y="290"
+			data-speed="300"
+			data-start="1400"
+			data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >STRAWBERRY COCTAIL</div>
+
+                    <div class="caption big_black sfb stb"
+			data-x="720"
+			data-y="320"
+			data-speed="300"
+			data-start="1700"
+			data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >$ 7.49</div>
+
+                    <div class="caption lft ltb"
+			data-x="500"
+			data-y="0"
+			data-speed="600"
+			data-start="3600"
+			data-easing="easeOutExpo" data-end="5600" data-endspeed="600" data-endeasing="easeInSine" ><img src="images/slides/drink2.jpg" alt="Image 6"></div>
+
+                    <div class="caption bold_brown_text sft stb"
+			data-x="720"
+			data-y="290"
+			data-speed="300"
+			data-start="3900"
+                        data-easing="easeOutExpo" data-end="5800" data-endspeed="300" data-endeasing="easeInSine" >COKE & RUM</div>
+
+                    <div class="caption big_black sfb stb"
+			data-x="720"
+			data-y="320"
+			data-speed="300"
+			data-start="4200"
+			data-easing="easeOutExpo" data-end="5700" data-endspeed="300" data-endeasing="easeInSine" >$ 5.99</div>
+
+                    <div class="caption lft ltb"
+			data-x="500"
+			data-y="0"
+			data-speed="600"
+			data-start="6100"
+			data-easing="easeOutExpo" data-end="8100" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/slides/drink3.jpg" alt="Image 9"></div>
+
+                    <div class="caption bold_green_text sft stb"
+			data-x="720"
+			data-y="290"
+			data-speed="300"
+			data-start="6400"
+			data-easing="easeOutExpo" data-end="8300" data-endspeed="300" data-endeasing="easeInSine" >MOJITO COCTAIL</div>
+
+                    <div class="caption big_black sfb stb"
+			data-x="720"
+			data-y="320"
+			data-speed="300"
+			data-start="6700"
+			data-easing="easeOutExpo" data-end="8200" data-endspeed="300" data-endeasing="easeInSine" >$ 6.79</div>-->
+                </li>
+<!--		<li data-transition="turnoff" data-slotamount="1" data-masterspeed="300" >
+                    <img src="/images/slides/slide31.jpg" >
+
+                    <div class="caption large_text fade"
+			data-x="509"
+			data-y="290"
+			data-speed="300"
+			data-start="800"
+			data-easing="easeOutExpo"  ></div>
+
+                    <div class="caption very_large_black_text randomrotate"
+			data-x="641"
+			data-y="95"
+			data-speed="300"
+			data-start="1100"
+			data-easing="easeOutExpo"  >SLIDER</div>
+
+                    <div class="caption large_black_text randomrotate"
+			data-x="642"
+			data-y="161"
+			data-speed="300"
+			data-start="1400"
+			data-easing="easeOutExpo"  >REVOLUTION</div>
+
+                    <div class="caption bold_red_text randomrotate"
+			data-x="645"
+			data-y="201"
+			data-speed="300"
+			data-start="1700"
+			data-easing="easeOutExpo"  >GOT FULLSCREEN VIDEO</div>
+
+                    <div class="caption sfb"
+			data-x="640"
+			data-y="223"
+			data-speed="300"
+			data-start="2000"
+			data-easing="easeOutBack"  ><img src="/images/slides/video.jpg" alt="Image 7"></div>
+
+                    <div class="caption sft"
+			data-x="639"
+			data-y="383"
+			data-speed="300"
+			data-start="2300"
+			data-easing="easeOutExpo"  data-linktoslide="4" ><img src="/images/slides/videobutton.jpg" alt="Image 8"></div>
+		</li>-->
+
+<!--		 THE THIRD SLIDE 
+		<li data-transition="slidedown" data-slotamount="7" data-masterspeed="300" data-thumb="/images/thumbs/thumb4.jpg">
+                    <img src="/images/slides/black.jpg" >
+
+			<div class="caption fade fullscreenvideo" data-autoplay="false" data-x="0" data-y="0" data-speed="500" data-start="10" data-easing="easeOutBack"><iframe src="http://player.vimeo.com/video/22775048?title=0&amp;byline=0&amp;portrait=0;api=1" width="100%" height="100%"></iframe></div>
+
+			<div class="caption big_white sft stt"
+                            data-x="327"
+                            data-y="25"
+                            data-speed="300"
+                            data-start="500"
+                            data-easing="easeOutExpo" data-end="4000" data-endspeed="300" data-endeasing="easeInSine" >Have Fun Watching the Video</div>
+		</li>
+
+		 THE FOURTH SLIDE 
+		<li data-transition="slideleft" data-slotamount="1" data-masterspeed="300" data-thumb="/images/thumbs/thumb5.jpg">
+
+                    <img src="/images/slides/slide4.jpg" >
+
+			<div class="caption large_text sft"
+                            data-x="50"
+                            data-y="44"
+                            data-speed="300"
+                            data-start="800"
+                            data-easing="easeOutExpo"  >TOUCH ENABLED</div>
+
+									<div class="caption medium_text sfl"
+										 data-x="79"
+										 data-y="82"
+										 data-speed="300"
+										 data-start="1100"
+										 data-easing="easeOutExpo"  >AND</div>
+
+									<div class="caption large_text sfr"
+										 data-x="128"
+										 data-y="78"
+										 data-speed="300"
+										 data-start="1100"
+										 data-easing="easeOutExpo"  ><span style="color: #ffc600;">RESPONSIVE</span></div>
+
+									<div class="caption lfl"
+										 data-x="53"
+										 data-y="192"
+										 data-speed="300"
+										 data-start="1400"
+										 data-easing="easeOutExpo"  ><img src="/images/slides/imac.png" alt="Image 4"></div>
+
+									<div class="caption lfl"
+										 data-x="253"
+										 data-y="282"
+										 data-speed="300"
+										 data-start="1500"
+										 data-easing="easeOutExpo"  ><img src="/images/slides/ipad.png" alt="Image 5"></div>
+
+									<div class="caption lfl"
+										 data-x="322"
+										 data-y="313"
+										 data-speed="300"
+										 data-start="1600"
+										 data-easing="easeOutExpo"  ><img src="/images/slides/iphone.png" alt="Image 6"></div>
+							</li>
+
+
+							 THE FIFTH SLIDE 
+							<li data-transition="flyin" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
+									<img src="/images/slides/slide51.jpg" >
+
+									<div class="caption large_text sfl"
+										 data-x="38"
+										 data-y="200"
+										 data-speed="300"
+										 data-start="1000"
+										 data-easing="easeOutExpo"  >A Happy</div>
+
+									<div class="caption large_text sfl"
+										 data-x="37"
+										 data-y="243"
+										 data-speed="300"
+										 data-start="1300"
+										 data-easing="easeOutExpo"  >Holiday Season</div>
+
+									<div class="caption randomrotate"
+										 data-x="610"
+										 data-y="174"
+										 data-speed="800"
+										 data-start="1600"
+										 data-easing="easeOutExpo"  ><img src="/images/slides/TP_logo.png" alt="Image 4"></div>
+							</li>-->
+						</ul>
+
+
+
+						<div class="tp-bannertimer"></div>
+					</div>
+				</div>
+
+				<div id="unvisible_button"></div>
+
+<!--
+				<div class="space30"></div>
+
+				<div class="configurator">
+
+					 
+					<div class="one_third">
+						<table>
+						  <tbody>
+						    <tr>
+								<td class="config_title">1</td>
+								<td class="divider"></td>
+							</tr>
+						  </tbody>
+						 </table>
+						<div class="space15"></div>
+						<div class="conftitle">TRANSITION <span>(TAKES IMMEDIATE EFFECT)</span></div>
+						<div class="selecter">
+							<div class="dropdown">
+								<div class="dropcontent">Select a Transition Type</div>
+								<div class="dropbutton"></div>
+								<div class="clear"></div>
+							</div>
+							<select class="selecttransition">
+									<option value="Demo">ORIGINAL PREVIEW</option>
+									<option value="random">&nbsp;&nbsp;&nbsp;Random Transitions</option>
+									<option value="random-standard">STANDARD</option>
+									<option value="boxslide">&nbsp;&nbsp;&nbsp;Box Mask</option>
+									<option value="boxfade">&nbsp;&nbsp;&nbsp;Box Mask Mosaic</option>
+									<option value="slotzoom-horizontal">&nbsp;&nbsp;&nbsp;Slot Zoom Horizontal</option>
+									<option value="slotslide-horizontal">&nbsp;&nbsp;&nbsp;Slot Slide Horizontal</option>
+									<option value="slotfade-horizontal">&nbsp;&nbsp;&nbsp;Slot Fade Horizontal</option>
+									<option value="slotzoom-vertical">&nbsp;&nbsp;&nbsp;Slot Zoom Vertical</option>
+									<option value="slotslide-vertical">&nbsp;&nbsp;&nbsp;Slot Slide Vertical</option>
+									<option value="slotfade-vertical">&nbsp;&nbsp;&nbsp;Slot Fade Vertical</option>
+									<option value="curtain-1">&nbsp;&nbsp;&nbsp;Curtain One</option>
+									<option value="curtain-2">&nbsp;&nbsp;&nbsp;Curtain Two</option>
+									<option value="curtain-3">&nbsp;&nbsp;&nbsp;Curtain Three</option>
+									<option value="slideleft">&nbsp;&nbsp;&nbsp;Slide Left</option>
+									<option value="slideright">&nbsp;&nbsp;&nbsp;Slide Right</option>
+									<option value="slideup">&nbsp;&nbsp;&nbsp;Slide Up</option>
+									<option value="slidedown">&nbsp;&nbsp;&nbsp;Slide Down</option>
+									<option value="fade">&nbsp;&nbsp;&nbsp;Fade</option>
+									<option value="random-premium">PREMIUM</option>
+									<option value="flyin">&nbsp;&nbsp;&nbsp;Fly In</option>
+									<option value="cubic">&nbsp;&nbsp;&nbsp;Cubic</option>
+									<option value="turnoff">&nbsp;&nbsp;&nbsp;Turn Off</option>
+									<option value="3dcurtain-horizontal">&nbsp;&nbsp;&nbsp;3D Curtain Horizontal</option>
+									<option value="3dcurtain-vertical">&nbsp;&nbsp;&nbsp;3D Curtain Vertical</option>
+									<option value="papercut">&nbsp;&nbsp;&nbsp;Paper Cut</option>
+							</select>
+						</div>
+					</div>
+
+
+					
+					<div class="one_third">
+						<table>
+						  <tbody>
+						    <tr>
+								<td class="config_title">2</td>
+								<td class="divider"></td>
+							</tr>
+						  </tbody>
+						 </table>
+						 <div class="space15"></div>
+						<div class="rotbutcont">
+							<div style="float:left">
+								<div class="rotator"><div class="rotator-line"></div></div>
+
+							</div>
+							<div style="float:left">
+								<div class="conftitle">ROTATION <span>(SIMPLE TRANSITIONS)</span></div>
+								<div class="rotatefield inputfield">0 degrees</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+
+
+					 
+					<div class="one_third last">
+						<table>
+						  <tbody>
+						    <tr>
+								<td class="config_title">3</td>
+								<td class="divider"></td>
+							</tr>
+						  </tbody>
+						 </table>
+						<div class="space15"></div>
+						<div class="conftitle">SLOT AMOUNT <span>(USED IN TRANSITIONS)</span></div>
+						<div class="pmbutcont">
+							<div class="slotamount inputfield" style="float:left;margin-right:5px;width:130px;">Pre Defined Slots</div>
+							<div class="slot plus"></div><div class="slot minus"></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+					<div class="space10"></div>
+
+					<table>
+						  <tbody>
+						    <tr>
+								<td class="config_title">4</td>
+								<td class="divider"></td>
+							</tr>
+						  </tbody>
+					</table>
+
+					
+					<div class="one_third">
+						<div class="space15"></div>
+						<div class="conftitle">NAVIGATION STYLE</div>
+						<div class="selecter">
+							<div class="dropdown">
+								<div class="dropcontent">Select a Navigation Style</div>
+								<div class="dropbutton"></div>
+								<div class="clear"></div>
+							</div>
+							<select class="selectnavstyle dselect">
+									<option value="round">Round Bullets</option>
+									<option value="navbar">NavBar with Bullets</option>
+									<option value="round-old">Round Bullets (old version)</option>
+									<option value="square-old">Square Bullets (old version)</option>
+									<option value="navbar-old">NavBar with Bullets (old version)</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="one_third">
+
+						<div class="space15"></div>
+						<div class="conftitle">NAVIGATION ARROWS</div>
+						<div class="selecter">
+							<div class="dropdown">
+								<div class="dropcontent">Select Position of Arrows</div>
+								<div class="dropbutton"></div>
+								<div class="clear"></div>
+							</div>
+							<select class="selectnavarrows dselect">
+									<option value="verticalcentered">Vertical Centered</option>
+									<option value="nexttobullets">Next to Bullets</option>
+									<option value="none">Hide Arrows</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="one_third last">
+
+						<div class="space15"></div>
+						<div class="conftitle">NAVIGATION THUMBS</div>
+						<div class="selecter">
+							<div class="dropdown">
+								<div class="dropcontent">Select Navigation Type</div>
+								<div class="dropbutton"></div>
+								<div class="clear"></div>
+							</div>
+							<select class="selectnavtype dselect">
+									<option value="bullet">Bullets</option>
+									<option value="thumb">Thumbnails</option>
+									<option value="none">No Navigation</option>
+							</select>
+							</select>
+						</div>
+					</div>
+					<div class="clear"></div>
+
+
+
+					<div style="width:100%;height:75px;"></div>
+
+
+		</div>  
+                                END OF CONFIGURATOR -->
+
+
+
+		
+
+
+    
+
+
+
+
+<?php /*
+<div id="banner" class="banner">
+    <div class="exhibitionPicture">
+        <img src="../images/layout/bannerOverlay01.png"/>
+    </div>
+    <div class="frame">
+        <div class="viewport">
+            <div class="inner">
+                <?php if(count($this->banners)): ?>
+                    <?php foreach($this->banners as $banner): ?>
+                    <div class="slide">  
+                        <a href="<?php echo $this->url(array('id' => $banner['id']), 'domain-increase-banner') ?>"><img src="/media/photos/<?php echo $banner['PhotoRoot']['offset'] ?>/937x257/<?php echo $banner['PhotoRoot']['filename'] ?>" />
+                            <div class="descr">
+                                <header><?php echo $banner['name'] ?></header>
+                                <p><?php echo $banner['description'] ?></p>
+                            </div>
+                        </a>
+                    </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+             </div>
+         </div>
+     </div>
+    <div class="overlay">
+        <div class="bannerDots"></div>
+    </div>
+</div>
+*/ ?>

@@ -1,0 +1,18 @@
+<ul>
+    <?php if(isset($this->categoryTree)): ?>
+        <?php foreach($this->categoryTree as $item):
+           
+            ?>
+                <!-- jeżeli są podkategorie menu -->
+                    <li>
+                        <?php if($item->getNode()->hasChildren()): ?>
+                            <a href="<?php echo $this->url(array('slug' => $item->Translation[$this->language]->slug), 'domain-category'); ?> " class="drop-menu" ><?php echo $item->Translation[$this->language]['name'] ?><img src="/img/arrow_down.png" /></a>
+                            <?php echo $this->action('category-menu-tree', 'index','product',array('slug' => $item->Translation[$this->language]->slug)); ?>
+                        <?php else: ?>
+                            <a href="<?php echo $this->url(array('slug' => $item->Translation[$this->language]->slug), 'domain-category'); ?> "><?php echo $item->Translation[$this->language]['name'] ?></a>
+                        <?php endif; ?>
+                    </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>
+        

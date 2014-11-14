@@ -1,0 +1,13 @@
+<?php if ($this->pageCount > 1): ?>
+    <!-- Previous page link -->
+    <?php if (isset($this->previous)): ?>
+        <a class="prev" href="<?php echo $this->url(array('page' => $this->previous), 'domain-news'); ?>">Poprzednia strona</a>
+    <?php else: ?>
+    <?php endif; ?>
+
+    <!-- Next page link -->
+    <?php if (isset($this->next)): ?>
+        <a class="next" href="<?php echo $this->url(array('page' => $this->next), 'domain-news'); ?>">Następna strona</a>
+    <?php else: ?>
+    <?php endif; ?>
+<?php endif; ?>

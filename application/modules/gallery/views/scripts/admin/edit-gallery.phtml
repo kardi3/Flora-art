@@ -1,0 +1,10 @@
+<?php echo $this->partial('index/edit-partial.phtml','admin',
+        array(
+            'form' => $this->form,
+            'languages' => $this->languages,
+            'adminLanguage' => $this->adminLanguage,
+            'language' => $this->language,
+            'actionName' => 'gallery',
+            'moduleName' => 'gallery',
+            'element' => $this->gallery
+        )); ?>

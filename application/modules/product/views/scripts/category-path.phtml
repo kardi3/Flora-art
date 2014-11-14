@@ -1,0 +1,40 @@
+<?php if(isset($this->category)): ?>
+    <?php if($this->category->getNode()->getParent()): ?>
+        <?php echo $this->partial('category-path.phtml', 'product', array('category' => $this->category->getNode()->getParent(), 'activeCategory' => $this->category, 'language' => $this->language)) ?>
+    <?php endif; ?>
+    <?php if($this->category['level'] > 0 &&  $this->category->Translation[$this->language]->slug): ?>
+        <li>
+            <?php if($this->category->getNode()->getChildren() && $this->activeCategory): ?>
+                <?php if($this->category['level'] == 1): ?>
+                    <a class="color_grey_light_3 d_inline_m m_right_10" href="javascript:void()">
+                <?php else: ?>
+                    <?php if($this->category->getNode()->hasChildren()): ?>
+                        <a class="color_grey_light_3 d_inline_m m_right_10" href="<?php echo $this->url(array('category' => $this->category->Translation[$this->language]->slug), 'domain-i18n:category-list') ?>">
+                    <?php else: ?>
+                        <a class="color_grey_light_3 d_inline_m m_right_10" href="<?php echo $this->url(array('category' => $this->category->Translation[$this->language]->slug), 'domain-i18n:category') ?>">
+                    <?php endif; ?>
+                <?php endif; ?>
+                        <?php if ($this->category->id == $this->activeCategory->id): ?>
+                                <h1><?php echo ucfirst($this->category->Translation[$this->language]->name); ?></h1>
+                        <?php else: ?>
+                                <?php echo ucfirst($this->category->Translation[$this->language]->name); ?>
+                        <?php endif; ?>    
+                    </a>
+                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small m_right_10"></i>
+            <?php else: ?>
+                <?php if($this->category->getNode()->hasChildren()): ?>
+                    <a class="color_grey_light_3 d_inline_m" href="<?php echo $this->url(array('category' => $this->category->Translation[$this->language]->slug), 'domain-i18n:category-list') ?>">
+                <?php else: ?>
+                    <a class="color_grey_light_3 d_inline_m" href="<?php echo $this->url(array('category' => $this->category->Translation[$this->language]->slug), 'domain-i18n:category') ?>">
+                <?php endif; ?>
+                    <?php if ($this->category->id == $this->activeCategory->id): ?>
+                            <h1><?php echo ucfirst($this->category->Translation[$this->language]->name); ?></h1>
+                    <?php else: ?>
+                            <?php echo ucfirst($this->category->Translation[$this->language]->name); ?>
+                    <?php endif; ?>    
+                </a>
+            <?php endif; ?>
+        </li>
+    <?php endif; ?>
+<?php endif; ?>
+<li>

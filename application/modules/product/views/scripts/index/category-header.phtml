@@ -1,0 +1,35 @@
+<h2>
+<?php
+if(isset($this->collection)):
+    echo $this->translate('Collection')." ".$this->collection['Translation'][$this->language]->name;
+elseif(isset($this->category)):
+    echo $this->translate('Category')." ".$this->category['Translation'][$this->language]->name;
+elseif($this->route=="domain-categories"):
+    echo $this->translate('Categories');
+elseif($this->route=="domain-collection-list"):
+    echo $this->translate('Collections');
+endif;
+?>
+</h2>
+<?php
+ if(isset($this->product)):
+     ?>
+<span class="productTopHeader"><?php
+     echo "<strong>".$this->translate('CATEGORY')."</strong>:   ".$this->cat->Translation[$this->language]->name."  <strong>".$this->translate('COLLECTION')."</strong>:  ".$this->col->Translation[$this->language]->name;
+ ?>
+</span>
+   <?php  
+     else:
+     ?>
+<hr />
+<?php
+ endif;
+
+//foreach($this->product as $key=>$cat):
+//    //echo $key."  ".$cat."<br />";
+//endforeach;
+////var_dump($this->product['Categories'][0]->Translation[$this->language]->name);
+//if($this->route == "domain-i18n:product"):
+//    echo $this->product['Categories'][0]['id'];
+//endif;
+// ?>

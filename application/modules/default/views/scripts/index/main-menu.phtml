@@ -1,0 +1,13 @@
+<script>
+    var time = 300;
+    $(function(){
+        $(".unreel").hide().parent().mouseover(function(){
+            $(this).find('ul').slideDown(time);
+        });
+        $("#top_menu").mouseleave(function(){
+            $(".unreel").stop().slideUp(time);
+        });
+        
+    });
+</script>
+

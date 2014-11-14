@@ -1,0 +1,43 @@
+<html lang="pl" xml:lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php  echo $this->render('_head.phtml'); ?>
+    </head>
+
+
+
+<body>
+    <div id="container">
+
+        <?php echo $this->render('_header.phtml'); ?>
+
+        <div id="content">
+
+            <div id="leftSidebar">
+
+                     <?php echo $this->layout()->topGyms; ?>
+                    <div style="width:200px;height:200px;border:1px solid black;" id="reklama1">Miejsce na reklame</div>
+            </div>
+
+            <div id="main">
+
+                <div id="leftWrapper">
+                    <a href="#" class="newGymButton">Zarejestruj siłownię za darmo</a>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+
+                <div id="rightWrapper">
+
+                    <?php echo $this->layout()->promotedGyms; ?>
+                    <div id="reklama2" style="width:150px;height:150px;border:1px solid black">Miejsce na reklame2</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>	
+        <?php echo $this->render('_footer.phtml'); ?>
+
+
+
+    </div>
+</body>
+</html>

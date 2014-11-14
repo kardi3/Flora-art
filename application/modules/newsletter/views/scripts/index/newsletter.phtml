@@ -1,0 +1,46 @@
+<br />
+<div class="newsletterWrapper">
+    <h1>Newsletter</h1>
+    <div class="newsletterContent">
+
+        <form class="form-horizontal" action="<?php echo $this->form->getAction() ?>" method="post" enctype="multipart/form-data">
+             <?php if($this->messages()->count()): ?>
+            <div class="message">
+                <?php echo $this->messages()->render(); ?>
+            </div>
+            <?php endif; ?>
+            <span class="newsletterSign">
+            Jeśli chcesz na bieżąco otrzymywać informacje o nowościach promocjach i innych wydarzeniach wpisz swój email: 
+            </span>
+            <?php echo $this->form->email->removeDecorator('Label') ?>
+            <span class="newsletterHeader firstHeader">Kim jesteś: </span>
+            <span class="newsletterGroup"><?php echo $this->kimJestesForm->group_id; ?> </span>
+            <span class="newsletterHeader">Co Cię interesuje: </span>
+            <span class="newsletterHeader2">TRADE </span>
+            <span class="newsletterGroup"><?php echo $this->tradeForm->group_id; ?> </span>
+            <span class="newsletterHeader2">EVENT </span>
+            <span class="newsletterGroup"><?php echo $this->eventForm->group_id; ?> </span>
+            <span class="newsletterHeader2">DESIGN </span>
+            <span class="newsletterGroup"><?php echo $this->designForm->group_id; ?> </span>
+            <span class="newsletterHeader2">ACADEMY </span>
+            <span class="newsletterGroup"><?php echo $this->academyForm->group_id; ?> </span>
+            <?php echo $this->form->submit ?>
+            <?php echo $this->form->id ?>
+        </form>
+    </div>
+    
+    <div class="newsletterMessageList">
+        <h2><?php echo $this->translate('Newsletter archive'); ?></h2>
+        <?php foreach($this->messageList as $message): ?>
+           <div class="newsletterArchiveItem">
+               <span class="newsletterDate"><?php echo MF_Text::timeFormat($message->send_at, 'Y-m-d H:i'); ?></span> -
+               <a href="<?php echo $this->url(array('slug'=>$message->slug),'domain-archive-newsletter'); ?>">
+                     <?php echo $message->title; ?>
+               </a>
+           </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+

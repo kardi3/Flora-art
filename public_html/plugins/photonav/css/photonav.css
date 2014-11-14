@@ -1,0 +1,46 @@
+.photonav .photo {
+	clear: both;
+	overflow: hidden;
+}
+
+.photonav .photo .fixed img {
+	display: block;
+	border: 0px;
+}
+
+.photonav .photo .fixed a {
+	display: block;
+}
+
+.photonav .photo .fixed {
+	overflow: visible;
+	background-position: top left;
+	float: left;
+}
+
+/* Adjust this part  */
+
+.photonav .photo {
+	width: 400px; 
+	margin: 10px;
+	border: 1px solid gray;
+}
+
+.photonav .photo .opt1 {
+	height: 100px;
+	background-image: url();
+}
+
+/* optional buttons */
+
+a.button1 {
+	margin-left: 20px;
+	margin-top: 30px;
+	width: 100px;
+	height: 90px;
+	background-image: url();
+}
+
+a.button1:hover {
+	background-image: url();
+}

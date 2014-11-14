@@ -1,0 +1,34 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".bottom-slider").bxSlider({
+        prevSelector: '#bottom_slider_prev',
+        nextSelector: '#bottom_slider_next',
+        minSlides: 9,
+        maxSlides: 9,
+        slideMargin: 50,
+        pager: false,
+        auto: true,
+        speed: 5000,
+        pause: 0,
+        easing: "linear",
+        infiniteLoop: true
+    });
+});
+
+                
+</script>
+
+<div id="bottom_slider">
+<!--    <a id="bottom_slider_prev"></a>
+    <a id="bottom_slider_next"></a>-->
+    <div class="bottom-slider">
+        <?php foreach($this->slider['Slides'] as $slide): ?>
+        <?php if($slide['level'] == 0) continue; ?>
+            <li style="float: left; width: auto !important; height: auto; ">
+		<?php if(!is_null($slide['target_href'])):?><a href="<?php echo $slide['target_href']; ?>"><?php endif; ?>
+                    <img style="height: auto" src="/media/photos/<?php echo $slide['PhotoRoot']['offset'] ?>/<?php echo $slide['PhotoRoot']['filename'] ?>" id="slider_<?php echo substr(MF_Text::createSlug($slide['PhotoRoot']['filename']), 0, -5); ?>" <?php if(strlen($slide['title'])): ?>title="<?php echo $slide['title'] ?>"<?php endif; ?> />
+		<?php if(!is_null($slide['target_href'])):?></a><?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </div>
+</div>

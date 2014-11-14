@@ -1,0 +1,98 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+News:
+  tableName: news_news
+  actAs:
+    I18n:
+      fields: [name, slug, description]
+      tableName: news_news_translation
+      className: NewsTranslation
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    views:
+      type: integer(4)
+    author_id:
+      type: integer(4)
+    last_editor_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description:
+      type: clob
+    publish:
+      type: boolean
+      default: 1
+    publish_date:
+      type: timestamp
+    photo_root_id:
+      type: integer(4)
+    metatag_id:
+      type: integer(4)
+    video_root_id:
+      type: integer(4)
+    attachment_id:
+      type: integer(4)
+NewsTranslation:
+  tableName: news_news_translation
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    lang:
+      primary: true
+      type: string(64)
+    slug:
+      type: string(255)
+    name:
+      type: string(255)
+    description:
+      type: clob
+  relations:
+    News:
+      local: id
+      foreign: id
+      foreignAlias: Translation
+      alias: News
+      type: one
+      foreignType: many
+Tag:
+  tableName: news_tag
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    metatag_id:
+      type: integer(4)
+  relations:
+      News:
+        refClass: NewsTag
+        local: tag_id
+        foreign: news_id
+        foreignType: many
+        foreignAlias: Tags
+        alias: Newses
+NewsTag:
+  tableName: news_news_tag
+  columns:
+    tag_id:
+      primary: true
+      type: integer(4)
+    news_id:
+      primary: true
+      type: integer(4)
+    

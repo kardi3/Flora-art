@@ -1,0 +1,158 @@
+<script type="text/javascript">
+window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'pl'}
+</script>
+
+<section class="page_title translucent_bg_color_scheme image_fixed t_align_c relative wrapper" style="background: url('/media/photos/1645854905/1680x380/cropped-banner-2.jpg') no-repeat;">
+    <div class="container">
+        <h1 class="color_light fw_light m_bottom_5"><?php echo $this->article['Translation'][$this->language]['name']; ?></h1>
+	<!--breadcrumbs-->
+	<ul class="hr_list d_inline_m breadcrumbs">
+            <li class="m_right_8 f_xs_none">
+                <a href="<?php echo $this->url(array(), 'domain-i18n:homepage') ?>" class="color_grey_light_3 d_inline_m m_right_10">
+                    Home
+                </a>
+                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+            </li>
+            <li class="m_right_8 f_xs_none">
+                <a href="<?php echo $this->url(array(), 'domain-news') ?>" class="color_grey_light_3 d_inline_m m_right_10">
+                    <?php echo $this->translate('News') ?>
+                </a>
+                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+            </li>
+            <li class="f_xs_none">
+                <a class="color_grey_light_3 d_inline_m">
+                    <?php echo $this->article['Translation'][$this->language]['name']; ?>
+                </a>
+            </li>
+	</ul>
+    </div>
+</section>
+<!--content-->
+<div class="section_offset">
+    <div class="container">
+        <div class="row">
+            <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
+                <!--post-->
+                <article class="clearfix m_bottom_45 m_xs_bottom_30 blog_post">
+                    <!--date,category,likes-->
+                    <div class="blog_side_container w_sm_auto f_left f_xs_none m_xs_bottom_5">
+                        <!--date-->
+                        <a href="#" class="updated dtstamp d_block d_xs_inline_b m_xs_right_5 blog_side_button r_corners bg_color_purple color_light not_hover t_align_c blog_date m_bottom_5">
+                            <?php 
+                            $date = new Zend_Date($this->article['publish_date'], 'yyyy-MM-dd HH:mm:ss');
+                            $day = $date->toString('dd');
+                            $month = mb_substr($date->toString(Zend_Date::MONTH_NAME), 0, 3,'UTF-8');
+                            ?>
+                            <span class="d_block day_of_the_month fw_light"><?php echo $day; ?></span>
+                            <span class="d_block tt_uppercase fs_medium"><?php echo $month; ?></span>
+                        </a>
+			<a href="#" class="d_block d_xs_inline_b m_xs_right_5 blog_side_button vc_child t_align_c color_purple bg_color_purple_hover color_light_hover bg_light_3 r_corners m_bottom_5 tr_all">
+				<i class="icon-picture-1 d_inline_m"></i>
+			</a>
+			<a href="#" class="d_block d_xs_inline_b m_xs_right_5 blog_side_button vc_child t_align_c border_grey r_corners tr_all color_grey color_red_hover">
+				<span class="d_inline_m">
+					<span class="d_block"><i class="icon-eye-1 color_grey_light_2 tr_all d_block m_top_5"></i></span>
+					<i class="fs_medium"><?php echo $this->article['views']; ?></i>
+				</span>
+			</a>
+
+			<div class="fb-like d_block d_xs_inline_b m_top_5 m_xs_right_5 blog_side_button vc_child" data-href="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" data-width="120" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+			<a class="twitter-share-button" data-count="vertical" href="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+			    Tweet
+			</a>
+
+			<div class="g-plusone" data-size="tall" data-annotation="bubble"></div>
+
+		    </div>
+                    <figure class="hnews hentry item">
+			<h3 class="entry-title fw_light color_dark m_bottom_10">
+			    <?php echo $this->article['Translation'][$this->language]['name']; ?>
+			</h3>
+			<ul class="dotted_list m_bottom_5 color_grey_light_2">
+				<li class="m_right_15 relative d_inline_m">
+					<a href="#" class="author color_grey fs_small">
+						<i>Flora art</i>
+					</a>
+				</li>
+				<li class="m_right_15 relative d_inline_m">
+				    <?php foreach($this->article['Tags'] as $tag): ?>
+					<a href="#" rel="tag" class="fs_medium color_grey"><i><?php echo $tag['name']; ?></i></a>
+				   <?php endforeach; ?>
+					
+				</li>
+				<li class="m_right_15 relative d_inline_m">
+					<a href="#" class="color_scheme_hover">
+						<i class="icon-eye-1 m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all"><?php echo $this->article['views']; ?></i>
+					</a>
+				</li>
+			</ul>
+			<?php $photo=$this->article['PhotoRoot']; ?>
+			<a style="float:left;" data-group="<?php echo $this->article['Translation'][$this->language]['slug']; ?>" class="jackbox m_top_15 r_corners m_bottom_15 m_right_20 " data-thumbnail="/media/photos/<?php echo $photo['offset']; ?>/120x90/<?php echo $photo['filename']; ?>" href="/media/photos/<?php echo $photo['offset']; ?>/<?php echo $photo['filename']; ?>">
+					
+			    <img src="/media/photos/<?php echo $photo['offset']; ?>/300x150/<?php echo $photo['filename']; ?>" alt="" />
+			</a>
+			<figcaption style="text-align:left">
+                            
+                            <p class="fw_light m_bottom_12 entry-content">
+                                <?php echo $this->article['Translation'][$this->language]['description']; ?>
+                            </p>
+			    <ul class="photo-gallery">
+			    <?php foreach($this->article->get('Photos') as $photo): ?>
+				<li>
+											
+				    <a data-group="<?php echo $this->article['Translation'][$this->language]['slug']; ?>" class="jackbox" data-thumbnail="/media/photos/<?php echo $photo['offset']; ?>/120x90/<?php echo $photo['filename']; ?>" href="/media/photos/<?php echo $photo['offset']; ?>/<?php echo $photo['filename']; ?>">
+					
+					<img src="/media/photos/<?php echo $photo['offset']; ?>/120x90/<?php echo $photo['filename']; ?>" alt="" />
+				    </a>
+				</li>
+			    <?php endforeach; ?>
+			    </ul>
+			</figcaption>
+                    </figure>
+                </article>
+            </section>
+                <aside class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="m_bottom_40 m_xs_bottom_30">
+                        <h5 class="fw_light color_dark m_bottom_20">
+                            <?php echo $this->translate('Recent news') ?>
+                        </h5>
+                        <?php foreach($this->recentNews as $recent): ?>
+                            <article class="hnews hentry item clearfix m_bottom_35 m_xs_bottom_20">
+                                <a href="<?php echo $this->url(array('slug' => $recent['Translation'][$this->language]['slug']), 'domain-news-article') ?>" class="hmedia d_block r_corners wrapper f_left m_right_20 m_md_right_10 m_xs_right_20 f_sm_none m_sm_bottom_10 d_sm_inline_b d_xs_block f_xs_left m_xs_bottom_0">
+                                    <?php if($recent['PhotoRoot']['offset']): ?>
+                                        <img class="photo r_corners m_bottom_20" src="/media/photos/<?php echo $recent['PhotoRoot']['offset'] ?>/80x80/<?php echo $recent['PhotoRoot']['filename'] ?>" data-original="/media/photos/<?php echo $recent['PhotoRoot']['offset'] ?>/<?php echo $recent['PhotoRoot']['filename'] ?>" alt="<?php echo $recent['PhotoRoot']['alternate_text']; ?>" title="<?php echo $recent['PhotoRoot']['title'] ?>" />
+                                    <?php endif; ?>
+                                </a>
+                                <a href="<?php echo $this->url(array('slug' => $recent['Translation'][$this->language]['slug']), 'domain-news-article') ?>" class="entry-title color_dark d_block lh_medium m_bottom_5">
+                                    <b><?php echo $recent['Translation'][$this->language]['name']; ?></b>
+                                </a>
+                                    <ul class="dotted_list color_grey_light_2 article_stats">
+                                        <li class="m_right_15 relative d_inline_m">
+                                            <a href="#" class="color_grey_light_2 fs_small">
+                                                <i class="icon-picture"></i>
+                                            </a>
+                                        </li>
+                                        <li class="m_right_15 relative d_inline_m">
+                                            <a href="#" class="fs_small color_grey">
+                                                <i><?php echo MF_Text::timeFormat($recent['publish_date'],'d/m/Y'); ?></i>
+                                            </a>
+                                        </li>
+					<li class="m_right_15 relative d_inline_m">
+					    <?php foreach($recent['Tags'] as $tag): ?>
+						<a href="#" class="fs_small color_grey">
+							<i><?php echo $tag['name']; ?></i>
+						</a>
+					    <?php endforeach; ?>
+					</li>
+                                    </ul>
+                            </article>
+                        <?php endforeach; ?>
+                    </div>
+		</aside>
+	</div>
+    </div>
+</div>

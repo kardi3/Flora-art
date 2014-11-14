@@ -1,0 +1,11 @@
+.dropdown {float:left; padding-right:0px}
+.dropdown dt {padding:12px 5px 13px 5px; color: #8f8f8f; text-decoration:none; cursor:pointer; font-weight:bold; font-size:12px}
+.dropdown dt:hover {background:#666666; color:#fff}
+.dropdown dd {position:absolute; overflow:hidden; width:208px; display:none; background:#E5E5E5; z-index:200; opacity:0}
+.dropdown ul {width:199px; list-style:none;}
+.dropdown li {margin-left:0px;}
+.dropdown a, .dropdown a:active, .dropdown a:visited {font-size:12px; display:block; color: #8f8f8f; text-decoration:none;}
+.dropdown a:hover {background:#666666; color:#fff; font-weight:bold;}
+.dropdown .underline {font-weight:bold; padding:5px; width:199px}
+.dropdown a.menu{text-decoration: none; font-weight: bold; font-size: 12px; color: #8f8f8f; display: inline;}
+.dropdown a.menu:hover{color: #fff; font-size: 12px; text-decoration: none; font-weight: bold;}

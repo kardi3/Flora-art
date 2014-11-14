@@ -1,0 +1,114 @@
+<script>
+    /* <![CDATA[ */
+//    // NEWSLETTER FORM AJAX SUBMIT
+//    $('.newsletter .submit').on('click', function(event){
+//        event.preventDefault();
+//        var email = $('.email').val();
+//        var form_data = new Array({ 'Email' : email});
+//        $.ajax({
+//            type: 'POST',
+//            url: "contact.php",
+//            data: ({'action': 'newsletter', 'form_data' : form_data})
+//        }).done(function(data) {
+//            alert(data);
+//        });
+//    });
+    // REVOLUTION SLIDER 
+    var api;
+    jQuery(document).ready(function() {
+
+//        if (jQuery.fn.cssOriginal !== undefined)   // CHECK IF fn.css already extended
+//            jQuery.fn.css = jQuery.fn.cssOriginal;
+
+        api = jQuery('.banner').revolution(
+                {
+                    delay: 4050,
+                    startheight: 339,
+                    startwidth: 980,
+                    
+                    hideThumbs: 0,
+                    
+                    thumbWidth: 100,
+                    thumbHeight: 50,
+                    thumbAmount: 5,
+                    
+                    navigationType: "bullet",
+                    navigationArrows: "verticalcentered",
+                    
+                    navigationStyle: "round-old",
+                    
+                    navigationHAlign: "right",
+                    navigationVAlign: "top",
+                    navigationHOffset: 0,
+                    navigationVOffset: 20,
+
+                    soloArrowLeftHalign: "left",
+                    soloArrowLeftValign: "center",
+                    soloArrowLeftHOffset: 170,
+                    soloArrowLeftVOffset: 0,
+                    
+                    soloArrowRightHalign: "right",
+                    soloArrowRightValign: "center",
+                    soloArrowRightHOffset: -200,
+                    soloArrowRightVOffset: 0,
+
+                    touchenabled: "on",
+                    onHoverStop: "on",
+                    
+                    navOffsetHorizontal: 0,
+                    navOffsetVertical: 20,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    hideSliderAtLimit: 0,
+                    stopAtSlide: -1,
+                    stopAfterLoops: -1,
+                    
+                    shadow: 0,
+                    fullWidth: "off"
+
+                });
+
+
+                //google maps
+//                var yourStartLatLng = new google.maps.LatLng(50.001542, 19.905783);
+//                $('.map_canvas').gmap({'center': yourStartLatLng, 'zoom': 15, 'disableDefaultUI': true, 'callback': function() {
+//                        var self = this;
+//                        self.addMarker({'position': this.get('map').getCenter()});
+//                }});
+            
+            // PORTFOLIO CAROUSEL
+//            $("#foo2").carouFredSel({
+//                auto: true,
+//                scroll: 1,
+//                pagination: "#foo2_pag",
+//                swipe: {
+//                    ontouch: true,
+//                    onMouse: true
+//                },
+//                width: 'variable',
+//                height: 'variable',
+//                items:{
+//                    width: 'auto',
+//                    visible: 3
+//                }
+//            });
+            $('#gototop').click(function(){
+                $('html, body').animate({ scrollTop: 0 }, 1000);
+                return false;
+             });
+    });
+</script>
+<div class="banner-container colectionSlider">
+    <div class="banner">
+        <ul>
+            <?php foreach($this->collection_slider as $slide): 
+                ?>
+            <?php if($slide['level'] == 0) continue; ?>
+            <li data-transition="slotfade-vertical" data-slotamount="7">
+                <img  src="/media/photos/<?php echo $slide['offset'] ?>/980x/<?php echo $slide['filename'] ?>" alt="Slider background">
+               
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

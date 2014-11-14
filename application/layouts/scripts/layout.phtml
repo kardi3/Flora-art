@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="pl" class="noIE">
+<head>
+  <?php echo $this->render('_head.phtml'); ?>
+</head>
+<body class="sticky_menu" cz-shortcut-listen="true">
+    
+        <div class="wide_layout bg_light">
+    <?php echo $this->render('_header.phtml'); ?>
+
+	    
+                <?php echo $this->layout()->slider; ?>
+   <?php echo $this->layout()->content; ?>
+
+   <?php echo $this->render('_footer.phtml'); ?>
+	</div>
+</body>
+</html>

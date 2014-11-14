@@ -1,0 +1,86 @@
+    <style>
+	
+	.bannerWrapper{
+	    position: relative;
+	    padding: 0px 120px;
+	    margin-top: -190px;
+	    z-index: 100;
+	}
+	</style>
+    
+<section class="section_offset">
+    
+    <div class="container t_align_c">
+	<div class="bannerWrapper">
+	<div class="col-md-4 banneritem" id="bannerItem1">
+	    <a href="<?php echo $this->url(array('category' => 'ozdoby-dla-dziewczynek'),'domain-i18n:category'); ?>" title="Shop 1">
+	    <img src="http://livedemo00.template-help.com/virtuemart_45171/images/banners/banner1.png" alt="Joomla!" width="328" height="250">
+	    </a>
+	    <div class="clr"></div>
+	</div>
+	<div class="col-md-4 banneritem" id="bannerItem2">
+	    <a href="<?php echo $this->url(array('category' => 'ozdoby-do-wlosow'),'domain-i18n:category'); ?>" title="Shop 2">
+	    <img src="http://livedemo00.template-help.com/virtuemart_45171/images/banners/banner2.png" alt="Joomla!" width="328" height="250">
+	    </a>
+	    <div class="clr"></div>
+	</div>
+	<div class="col-md-4 banneritem" id="bannerItem3">
+	    <a href="<?php echo $this->url(array('category' => 'wieczorowe'),'domain-i18n:category'); ?>" title="Shop 3">
+	    <img src="http://livedemo00.template-help.com/virtuemart_45171/images/banners/banner3.png" alt="Joomla!" width="328" height="250">
+	    </a>
+	    <div class="clr"></div>
+	</div>
+    </div>
+	<div class="clearfix"></div>
+        <h1 class="color_dark fw_light m_bottom_15 heading_1 laine" data-appear-animation="bounceInLeft" style="font-size:2.25em">
+           Flora art
+        </h1>
+        <p class="m_bottom_35 heading_2" data-appear-animation="bounceInLeft" data-appear-animation-delay="150">
+            Postaw na doświadczenie
+        </p>
+	<article id="tab-1" data-appear-animation="fadeInUp" data-appear-animation-delay="450">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_20">
+		    
+		    <?php foreach($this->lastNews as $lastNews): ?>
+                    <article class="clearfix m_bottom_35 m_xs_bottom_20 hnews hentry item">
+			    <a href="#" class="url d_block r_corners wrapper f_left m_right_20 m_md_right_10 m_xs_right_20 f_sm_none m_sm_bottom_10 d_sm_inline_b d_xs_block f_xs_left m_xs_bottom_0">
+				    <img src="/media/photos/<?php echo $lastNews['PhotoRoot']['offset']; ?>/120x90/<?php echo $lastNews['PhotoRoot']['filename']; ?>" alt="">
+			    </a>
+			    <a href="#" class="url entry-title color_dark d_block lh_medium m_bottom_5"><b><?php echo $lastNews['Translation'][$this->language]['name']; ?></b></a>
+			    <ul class="dotted_list color_grey_light_2 article_stats">
+				    <li class="m_right_15 relative d_inline_m">
+					    <a href="#" class="color_grey_light_2 fs_small">
+						    <i class="icon-doc-text-inv"></i>
+					    </a>
+				    </li>
+				    <li class="m_right_15 relative d_inline_m">
+					    <a href="#" class="updated dtstamp fs_small color_grey">
+						    <i><?php echo MF_Text::timeFormat($lastNews['publish_date'],'d/m/Y H:i'); ?></i>
+					    </a>
+				    </li>
+				    <li class="m_right_15 relative d_inline_m">
+					<?php foreach($lastNews['Tags'] as $tag): ?>
+					    <a href="#" class="fs_small color_grey">
+						    <i><?php echo $tag['name']; ?></i>
+					    </a>
+					<?php endforeach; ?>
+				    </li>
+			    </ul>
+			    <span class="articleDescription entry-content">
+				<?php echo MF_Text::truncate(strip_tags($lastNews['Translation'][$this->language]['description']),100);; ?>
+				<a rel="tag" href="<?php echo $this->url(array('slug' => $lastNews['Translation'][$this->language]['slug']),'domain-news');?>">
+				    czytaj więcej
+				</a>
+			    </span>
+		    </article>	
+		    <?php endforeach; ?>		    
+		</div>
+		<div class="col-lg-6 col-md-6 t_align_l fw_light">
+                    <?php echo MF_Text::truncate($this->homepage['Translation'][$this->language]['description'],1000) ?>
+		    <a href="<?php echo $this->url(array('slug' => 'o-nas'),'domain-i18n:page');?>">czytaj więcej</a>
+		</div>
+            </div>
+        </article>
+    </div>
+</section>

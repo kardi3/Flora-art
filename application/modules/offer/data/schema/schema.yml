@@ -1,0 +1,65 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Offer:
+  tableName: offer_offer
+  actAs:
+    I18n:
+      fields: [name, slug, description]
+      tableName: offer_offer_translation
+      className: OfferTranslation
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    author_id:
+      type: integer(4)
+    last_editor_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description:
+      type: clob
+    publish:
+      type: boolean
+      default: 1
+    publish_date:
+      type: timestamp
+    photo_root_id:
+      type: integer(4)
+    metatag_id:
+      type: integer(4)
+    video_root_id:
+      type: integer(4)
+    attachment_id:
+      type: integer(4)
+OfferTranslation:
+  tableName: offer_offer_translation
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    lang:
+      primary: true
+      type: string(64)
+    slug:
+      type: string(255)
+    name:
+      type: string(255)
+    description:
+      type: clob
+  relations:
+    Offer:
+      local: id
+      foreign: id
+      foreignAlias: Translation
+      alias: Offer
+      type: one
+      foreignType: many

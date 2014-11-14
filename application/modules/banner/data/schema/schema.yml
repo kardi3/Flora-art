@@ -1,0 +1,59 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Banner:
+  tableName: banner_banner
+  actAs:
+    I18n:
+      fields: [name, slug, description]
+      tableName: banner_banner_translation
+      className: BannerTranslation
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    last_editor_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    website:
+      type: string(255)
+    description:
+      type: clob
+    status:
+      type: boolean
+      default: 1
+    photo_root_id:
+      type: integer(4)
+    metatag_id:
+      type: integer(4)
+BannerTranslation:
+  tableName: banner_banner_translation
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    lang:
+      primary: true
+      type: string(64)
+    slug:
+      type: string(255)
+    name:
+      type: string(255)
+    description:
+      type: clob
+  relations:
+   Banner:
+      local: id
+      foreign: id
+      foreignAlias: Translation
+      alias: Banner
+      type: one
+      foreignType: many

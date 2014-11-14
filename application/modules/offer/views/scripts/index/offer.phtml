@@ -1,0 +1,64 @@
+<?php $item = $this->item; ?>
+<section class="offer">
+<h1 class="offer-header">Aktualności</h1>
+<div class="path">
+	<a href="<?php echo $this->url(array(),'domain-homepage'); ?>" name=""><?php echo $this->translate('Home') ;?></a> / <a class="curr" href="<?php echo $this->url(array(),'domain-i18n:offer'); ?>" name=""><?php echo $this->translate('Offer') ;?></a>
+</div>
+	<div class="col-left">
+			
+			<div class="header">Aktualności</div>
+                            <div class="offer-container">
+                                <?php foreach($this->offerList as $key=>$offer): ?>
+                                    <div>
+                                            <span class="offer-date"><?php echo MF_Text::timeFormat($offer->publish_date,'Y-m-d'); ?></span>
+                                            <a style="font-size:13px;color:#7b7b7b;" href="<?php echo $this->url(array('slug' => $offer['Translation'][$this->language]['slug']), 'domain-offer') ?>"><?php echo MF_Text::truncate($offer['Translation'][$this->language]['name'],20); ?></a>
+                                    </div>
+                                <?php endforeach; ?>	
+                            </div>
+		
+	</div>
+		
+	<div class="col-right">
+		<div class="select-ref"> 
+                    <?php echo $item['Translation'][$this->language]['name'] ?>
+		</div>
+                    
+		<div>
+                    <?php echo $this->linkService->readLink($item['Translation'][$this->language]['description']); ?>
+                    <?php if($item->get('VideoRoot')): 
+                        $videoRoot = $item->get('VideoRoot');
+                        foreach($videoRoot->getNode()->getChildren() as $video):
+                        ?>
+                        <iframe class="offerVideo" src="<?php echo $video->url; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+                    <?php 
+                        endforeach;
+                    endif; ?>
+                        
+                    <?php if($item->get('PhotoRoot')): 
+                        $photoRoot = $item->get('PhotoRoot');
+                        foreach($photoRoot->getNode()->getChildren() as $key => $photo):
+                            if($key == 0)
+                                continue;
+                            ?>
+                        <img class="offerPhoto" src="/media/photos/<?php echo $photo->getOffset(); ?>/400x/<?php echo $photo->getFilename(); ?>" />
+                        
+                    <?php endforeach;
+                    endif; ?>
+                    
+                    <?php if($item->get('AttachmentRoot')&& $item->get('AttachmentRoot')->getNode()->hasChildren()): 
+                        $attachmentRoot = $item->get('AttachmentRoot'); ?>
+                        <div class="offerAttachment"><h5>Załączniki: </h5>
+                        <?php
+                        
+                        foreach($attachmentRoot->getNode()->getChildren() as $attachment):
+                        ?>
+                        <a download href="/media/attachments/<?php echo $attachment->getFilename(); ?>"><?php echo $attachment['Translation'][$this->language]['name']; ?></a>
+                    <?php 
+                        endforeach;
+                    endif; ?>
+                        </div>
+		</div>
+        </div>
+
+</section>
+<div class="clear"></div>

@@ -1,0 +1,89 @@
+<?php $message = $this->message; ?>
+<table cellspacing="0" cellpadding="0" align="center" style="width: 100%; margin: 0; padding: 0; background-color: #ffffff;" id="container">
+    <tbody>
+        <tr>
+            <td style="padding: 0 20px;">
+            <table width="700" cellspacing="0" cellpadding="0" align="center" height="859" style="border-collapse: collapse; text-align: left; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 12px; line-height: 15pt; color: #7b7b7b; margin: 0 auto;">
+                <tbody>
+                    <tr>
+                        <td width="566" valign="top" bgcolor="#FFFFFF" height="114" colspan="2"><img width="566" border="0" height="114" style="display: block;" src="<?php echo $this->serverUrl(); ?>/images/newsletter/newsletter_mediam_01a.jpg" alt=""></td>
+                        <td width="151" valign="middle" bgcolor="#f2f2f2" height="114" style="font-size: 12px; line-height: 13px; padding-left:30px;">
+                            <font color="#D2081E"><?php echo $message->content; ?></td>
+                    </tr>
+                    <tr>
+                        <td width="700" valign="bottom" bgcolor="#FFFFFF" height="5" colspan="3" style="font-size: 2px; line-height: 0px;">&nbsp;</td>
+                    </tr>
+                    <?php foreach($message['Pages'] as $key => $page): ?>
+                    <?php $photoRoot = $page->get('PhotoRoot'); ?>
+                    <?php $attachmentRoot = $page->get('AttachmentRoot'); ?>
+                    <?php if((count($message['Pages'])<=2)&&!strlen($page->title)&&!strlen($page->content)): ?>
+                    <tr>
+                        <td width="677px">
+                            <img  border="0" alt="" style="display: block;width:100%;" src="<?php echo $this->serverUrl(); ?>/media/photos/<?php echo $photoRoot->getOffset(); ?>/700x/<?php echo $photoRoot->getFilename(); ?>" />
+                       
+                        </td>
+                    </tr>
+                    <?php else: ?>
+                    <tr>
+                        <td width="146" bgcolor="#FFFFFF" height="156" style="padding: 15px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15pt; color: #7b7b7b;">
+                            <?php if(is_object($photoRoot)&&strlen($photoRoot->getFilename())): ?>
+                            <img width="150" border="0" height="89" alt="" style="display: block;" src="<?php echo $this->serverUrl(); ?>/media/photos/<?php echo $photoRoot->getOffset(); ?>/150x/<?php echo $photoRoot->getFilename(); ?>" />
+                            <?php endif; ?>
+                        </td>
+                        <td width="398" bgcolor="#FFFFFF" height="156" style="padding: 15px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15pt; color: #7b7b7b;">
+                            <?php if($key==0): ?> <span style="font-size: 11px; color: #d2081e;"><?php echo MF_Text::timeFormat($message->sent,'Y-m-d'); ?></span> <?php endif; ?>
+                            <h1 style="padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20pt; color: #7b7b7b; font-weight: lighter; margin-top: -5px; margin-bottom: 0px !important;"><?php echo $page->title; ?></h1>
+                            <?php echo $page->content; ?>
+                        </td>
+                        <td width="133" bgcolor="#FFFFFF" height="156" style="padding: 15px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15pt; color: #7b7b7b;">
+                            <a href="<?php echo $this->serverUrl(); ?>/media/attachments/<?php echo $attachmentRoot->getFilename(); ?>">  
+                                <?php echo $attachmentRoot->Translation['en']->title." ".$attachmentRoot->Translation['pl']->description; ?>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="700" height="21" colspan="3" style="font-size: 2px; line-height: 2px;"><img width="700" border="0" height="21" style="display: block;" src="<?php echo $this->serverUrl(); ?>/images/newsletter/newsletter_mediam_02.jpg" alt=""></td>
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                    
+                    
+                    
+                    <tr>
+                        <td width="700" height="119" colspan="3" style="font-size: 2px; line-height: 2px;"><center>
+                        <table width="700" cellspacing="0" cellpadding="0" bordercolor="#111111" border="0" bgcolor="#ececec" height="119" style="border-collapse: collapse">
+                            <tbody>
+                                <tr>
+                                    <td width="583" height="113"><img border="0" style="display: block" alt="" src="<?php echo $this->serverUrl(); ?>/images/newsletter/newsletter_mediam_04a.jpg"></td>
+                                    <td width="133" height="113">
+                                    <div align="center"><center>
+                                    <table width="60" cellspacing="0" cellpadding="0" bordercolor="#111111" border="0" height="60" style="border-collapse: collapse">
+                                        <tbody>
+                                            <tr>
+                                                <td width="30" align="center" height="30"><img width="22" border="0" height="22" alt="" src="<?php echo $this->serverUrl(); ?>/images/newsletter/facebook.jpg"></td>
+                                                <td width="30" align="center" height="30"><img width="22" border="0" height="22" alt="" src="<?php echo $this->serverUrl(); ?>/images/newsletter/twitter.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30" align="center" height="30"><img width="22" border="0" height="22" alt="" src="<?php echo $this->serverUrl(); ?>/images/newsletter/youtube.jpg"></td>
+                                                <td width="30" align="center" height="30"><img width="22" border="0" height="22" alt="" src="<?php echo $this->serverUrl(); ?>/images/newsletter/vimeo.jpg"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </center></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center></td>
+                    </tr>
+                    <tr>
+                        <td width="700" style="text-align: justify; padding-bottom: 20px; line-height: 10pt; padding-left: 20px; padding-right: 20px; color: #b1b1b1; font-size: 10px; padding-top: 0px" colspan="3">&nbsp;
+                        <p>Państwa adres e-mail został pozyskany z internetowej                          bazy adresów e-mail. Mamy nadzieję, że przesłane                          informacje znajdują się w obszarze Państwa                          zainteresowań, jeżeli nie, bardzo przepraszamy.                          Wiadomość nadano na adres e-mail publicznie dostępny w                          Internecie zgodnie z ustawą z dnia 18 lipca 2002 r. o                          Świadczeniu usług drogą elektroniczną (Dz. U. Nr 144 z                          2002 r., poz. 1204 z późn. zm.) nie stanowi informacji                          handlowej i nie może być uznawana jako SPAM.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,107 @@
+<!--page title-->
+<section class="page_title translucent_bg_color_scheme image_fixed t_align_c relative wrapper" style="background: url('/media/photos/1645854905/1680x380/cropped-banner-2.jpg') no-repeat;">
+    <div class="container">
+        <h1 class="color_light fw_light m_bottom_5"><?php echo $this->tag['name']; ?></h1>
+	<!--breadcrumbs-->
+	<ul class="hr_list d_inline_m breadcrumbs">
+            <li class="m_right_8 f_xs_none">
+                <a href="<?php echo $this->url(array(), 'domain-i18n:homepage') ?>" class="color_grey_light_3 d_inline_m m_right_10">
+                    Strona główna
+                </a>
+                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+            </li>
+            <li class="m_right_8 f_xs_none">
+                <a href="#" class="color_grey_light_3 d_inline_m m_right_10">
+                    <?php echo $this->tag['name']; ?>
+                </a>
+            </li>
+	</ul>
+    </div>
+</section>
+<!--content-->
+<div class="section_offset">
+    <div class="container">
+        <?php $counter = 0; ?>
+        <?php if(isset($this->paginator)): ?>
+            <?php foreach($this->paginator as $newsItem):?>
+                <?php if($newsItem['Translation'][$this->language]['slug']): ?>
+                    <?php if ($counter%2 == 0): ?>
+                    <div class="row">
+                    <?php endif; ?>
+                    <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_50 m_xs_bottom_30">
+                        <!--post-->
+			<article>
+                            <!--post content-->
+                            <figure>
+                                <a href="<?php echo $this->url(array('slug' => $newsItem['Translation'][$this->language]['slug']), 'domain-news-article') ?>" class="d_block wrapper r_corners m_bottom_20">
+                                    <?php if($newsItem['PhotoRoot']['offset']): ?>
+                                        <img src="/media/photos/<?php echo $newsItem['PhotoRoot']['offset'] ?>/570x320/<?php echo $newsItem['PhotoRoot']['filename'] ?>" data-original="/media/photos/<?php echo $newsItem['PhotoRoot']['offset'] ?>/<?php echo $newsItem['PhotoRoot']['filename'] ?>" alt="" title="" />
+                                    <?php endif; ?>
+				</a>
+				<figcaption class="blog_post hentry hnews item">
+                                    <div class="blog_side_container w_sm_auto f_left f_xs_none m_xs_bottom_5">
+                                        
+                                        <a href="#" class="updated dtstamp d_block d_xs_inline_b m_xs_right_5 blog_side_button r_corners bg_color_purple color_light not_hover t_align_c blog_date m_bottom_5">
+                                            <?php 
+                                            $date = new Zend_Date($newsItem['publish_date'], 'yyyy-MM-dd HH:mm:ss');
+                                            $day = $date->toString('dd');
+                                            $month = mb_substr($date->toString(Zend_Date::MONTH_NAME), 0, 3,'UTF-8');
+                                            ?>
+                                            <span class="d_block day_of_the_month fw_light"><?php echo $day; ?></span>
+                                            <span class="d_block tt_uppercase fs_medium"><?php echo $month; ?></span>
+                                        </a>
+                                    </div>
+                                    <h3 class="fw_light">
+                                        <a href="<?php echo $this->url(array('slug' => $newsItem['Translation'][$this->language]['slug']), 'domain-news-article') ?>" class="url entry-title color_dark tr_all">
+                                            <?php echo $newsItem['Translation'][$this->language]['name']; ?>
+                                        </a>
+                                    </h3>
+				    <ul class="dotted_list m_bottom_5 color_grey_light_2">
+					    <li class="m_right_15 relative d_inline_m">
+						    <a href="#" class="author color_grey fs_small">
+							    <i>Flora Art</i>
+						    </a>
+					    </li>
+					    
+					    <li class="m_right_15 relative d_inline_m">
+						<?php foreach($newsItem['Tags'] as $tag): ?>
+						    
+						    <a href="#" rel="tag" class="fs_medium color_grey"><i><?php echo $tag['name']; ?></i></a>
+						
+						<?php endforeach; ?>
+					    </li>
+					    <li class="m_right_15 relative d_inline_m">
+						    <a href="#" class="color_scheme_hover">
+							    <i class="icon-eye-1 m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all"><?php echo $newsItem['views']; ?></i>
+						    </a>
+					    </li>
+					   
+					    
+				    </ul>
+                                    <p class="entry-content fw_light m_bottom_12">
+                                        <?php echo MF_Text::truncate($newsItem['Translation'][$this->language]['description'], 250) ?>
+                                    </p>
+                                    <a href="<?php echo $this->url(array('slug' => $newsItem['Translation'][$this->language]['slug']), 'domain-news-article') ?>" class="color_purple d_inline_b color_pink_hover d_block m_right_20 fw_light">
+                                        <span class="d_inline_m m_right_5 icon_wrap_size_0 circle color_grey_light tr_all">
+                                            <i class="icon-angle-right"></i>
+                                        </span>
+					<?php echo $this->translate('czytaj więcej') ?>
+                                    </a>
+				</figcaption>
+                            </figure>
+			</article>
+                    </div>
+                    <?php $counter++; ?>
+                    <?php if ($counter%2 == 0): ?>
+                    </div>
+                    <?php elseif($counter == $this->articleItemCountPerPage): ?>
+                    </div>
+                    <?php endif; ?>
+                  <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+	<div class="clearfix">
+            <?php echo $this->paginationControl($this->paginator, 'Sliding', 'news_pagination_control.phtml') ?>
+	</div>
+    </div>
+</div>

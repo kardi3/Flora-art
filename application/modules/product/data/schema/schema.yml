@@ -1,0 +1,111 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Product:
+  tableName: product_product
+  actAs:
+    I18n:
+      fields: [name, slug, description]
+      tableName: product_product_translation
+      className: ProductTranslation
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description: 
+      type: clob
+    active:
+      type: boolean
+      default: 1
+    category_id:
+      type: integer(4)
+  relations:
+    Category:
+      local: category_id
+      foreign: id
+      alias: Category
+      foreignAlias: Products
+      type: one
+      foreignType: many
+ProductTranslation:
+  tableName: product_product_translation
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    lang:
+      primary: true
+      type: string(64)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description: 
+      type: clob
+  relations:
+    Product:
+      local: id
+      foreign: id
+      foreignAlias: Translation
+      alias: Product
+      type: one
+      foreignType: many     
+Category:
+  tableName: product_category
+  actAs:
+    I18n: 
+      fields: [name, slug, description]
+      tableName: product_category_translation
+      className: CategoryTranslation
+    Timestampable: ~
+    SoftDelete: ~
+    NestedSet:
+      HasManyRoots: false
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    description: 
+      type: clob
+    slug:
+      type: string(255)
+    metatag_id:
+      type: integer(4)
+    photo_root_id:
+      type: integer(4)
+CategoryTranslation:
+  tableName: product_category_translation
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    lang:
+      primary: true
+      type: string(64)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description: 
+      type: clob
+  relations:
+    Category:
+      local: id
+      foreign: id
+      foreignAlias: Translation
+      alias: Category
+      type: one
+      foreignType: many 

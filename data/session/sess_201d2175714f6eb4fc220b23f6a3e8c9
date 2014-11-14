@@ -1,0 +1,1 @@
+regionSession|a:1:{s:6:"region";s:10:"malopolska";}RequestedURL|a:1:{s:3:"url";s:6:"/admin";}Messages|a:1:{s:8:"messages";a:0:{}}Zend_Auth|a:1:{s:7:"storage";s:5:"flora";}USER|a:1:{s:14:"dashboard_time";a:1:{s:12:"new_articles";i:1415465255;}}__ZF|a:1:{s:4:"USER";a:1:{s:4:"ENVT";a:1:{s:14:"dashboard_time";i:1415467055;}}}

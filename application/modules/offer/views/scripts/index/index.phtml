@@ -1,0 +1,27 @@
+<div class="seeGarage leftMenu">
+    <ul>
+    <?php foreach($this->offers as $offer): ?>
+	<li>
+	    <a href="<?php echo $this->url(array('slug' => $offer['Translation'][$this->language]['slug']),'domain-i18n:offer'); ?>"><?php echo $offer['Translation'][$this->language]['name']; ?></a>
+	</li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<div class="outerWrapper">
+    <div class="block_breadcrumbs">
+                        	<div class="text"><p>Tu jesteś:</p></div>
+                            
+                            <ul>
+                            	<li><a href="/">Strona główna</a></li>
+                            	<li><a href="<?php echo $this->url(array(),'domain-list-offer'); ?>">Oferta</a></li>
+                                <li><?php echo $this->singleOffer['Translation'][$this->language]['name'] ?></li>
+                            </ul>
+                        </div>
+    
+    <div class="innerWrapper">
+	<div class="pixel"></div>
+    <h1><?php echo $this->singleOffer['Translation'][$this->language]['name'] ?></h1>
+<?php echo $this->singleOffer['Translation'][$this->language]['description'] ?>
+
+    </div>
+</div>

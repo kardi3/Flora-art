@@ -1,0 +1,52 @@
+<?php if(isset($this->tree)): ?>
+    
+<ul class="hr_list main_menu fw_light">
+        <?php foreach($this->tree as $key => $item):?>
+                <!-- jeżeli są podkategorie menu -->
+		<li class="container3d relative f_xs_none m_xs_bottom_5" id="menu_Item<?php echo $key; ?>">
+                   
+                         <!-- jeżeli jest zdefiniowany link do innej strony -->
+                        <?php if(strlen($item->custom_url)):?>
+                                   <a href="<?php echo $item->custom_url; ?>" class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+                        <?php elseif(!strlen($item->route)): ?>
+                                   <a href="#" class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+			<?php elseif($item->route == 'domain-i18n:page'): ?>
+                                   <a href="<?php echo $this->url(array('slug' => $item['target_type']), 'domain-i18n:page'); ?>" class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+			<?php elseif($item->route == 'domain-category'): ?>
+                                    <a href="<?php echo $this->url(array('slug' => $item->Translation[$this->language]->slug), $item->getRoute()); ?> " class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+				    <?php echo $this->action('category-menu-tree','index','product',array('slug' => $item->Translation[$this->language]->slug)); ?>
+			<?php else: ?>
+                                   <a href="<?php echo $this->url(array('slug' => $item->Translation[$this->language]->slug), $item->getRoute()); ?> " class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+                        <?php endif; ?>
+                            
+                        <?php if($item->getNode()->hasChildren()): ?>
+                            <?php echo $this->partial('index/main-menu.phtml', 'menu', array('subtree' => $item->getNode()->getChildren(), 'parent' => $this->parent, 'language' => $this->language)) ?>
+                       <?php endif; ?>
+                    </li>
+        <?php endforeach; ?>
+</ul>
+		    <?php elseif(isset($this->subtree)): ?>
+		    
+<ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+        <?php foreach($this->subtree as $key => $item):?>
+                <!-- jeżeli są podkategorie menu -->
+                    <li id="menu_Item<?php echo $key; ?>">
+                         <!-- jeżeli jest zdefiniowany link do innej strony -->
+                        <?php if(strlen($item->custom_url)):?>
+                                   <a href="<?php echo $item->custom_url; ?>" class="d_block color_dark relative " ><?php echo $item->Translation[$this->language]['title'] ?></a>
+                        <?php elseif(!strlen($item->route)): ?>
+                                   <a href="#" class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+                        <?php elseif($item->route == 'domain-i18n:page'): ?>
+                                   <a href="<?php echo $this->url(array('slug' => $item['target_type']), 'domain-i18n:page'); ?>" class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+			
+			<?php else: ?>
+                                   <a href="<?php echo $this->url(array('slug' => $item->Translation[$this->language]->slug), $item->getRoute()); ?> " class="d_block color_dark relative" ><?php echo $item->Translation[$this->language]['title'] ?></a>
+                        <?php endif; ?>
+                            
+                        <?php if($item->getNode()->hasChildren()): ?>
+                            <?php echo $this->partial('index/main-menu.phtml', 'menu', array('subtree' => $item->getNode()->getChildren(), 'parent' => $this->parent, 'language' => $this->language)) ?>
+                       <?php endif; ?>
+                    </li>
+        <?php endforeach; ?>
+		    </ul>
+<?php endif; ?>

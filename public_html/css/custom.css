@@ -1,0 +1,40 @@
+ul.photo-gallery{
+    margin-top:20px;
+    display:block;
+}
+ul.photo-gallery li{
+    margin:0px 5px;
+    display:inline-block;
+}
+
+@font-face {
+    font-family: laine;
+    src: url(/assets/font/Laine.TTF);
+}
+
+.laine{
+    font-family:'laine' !important;
+    font-size:5em !important;
+}
+
+.contact p,.page p:not(:first-of-type){
+    margin:1em 0px;
+}
+.page p:first-of-type{
+    margin-bottom:1em;
+}
+.contact textarea{
+    height:120px;
+    width:100%;
+}
+.contact input{
+    width:100%;
+}
+
+.r_slider h2,.r_slider p{
+    background: #fff;
+    color: green;
+    padding: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
